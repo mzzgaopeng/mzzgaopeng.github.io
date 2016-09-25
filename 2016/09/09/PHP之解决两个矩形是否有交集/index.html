@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PHP," />
 
 
 
@@ -84,19 +84,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="思路：判断点是否在面的范围内。假设给定的初始值为2,2,2,2,1,1,1,1即第一个矩形坐标为（2,2）长高也为2，第二个矩形同理。但是我们先不讨论第二个矩形的坐标（1,1）。红圆圈的坐标（$xleftup，$yleftup）。第一步：首先我们能确定第一个矩形的位置，如图红色矩形。第二步：若两个矩形有交集，第二个矩形【绿色的四个】应在在如图的临界位置，即第二个矩形应落在黑色矩形范围内才会有交集。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://lionspace.cn/2016/09/24/hello-world/index.html">
+<meta property="og:title" content="PHP之解决两个矩形是否有交集">
+<meta property="og:url" content="http://lionspace.cn/2016/09/09/PHP之解决两个矩形是否有交集/index.html">
 <meta property="og:site_name" content="lion">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-09-24T15:18:29.474Z">
+<meta property="og:description" content="思路：判断点是否在面的范围内。假设给定的初始值为2,2,2,2,1,1,1,1即第一个矩形坐标为（2,2）长高也为2，第二个矩形同理。但是我们先不讨论第二个矩形的坐标（1,1）。红圆圈的坐标（$xleftup，$yleftup）。第一步：首先我们能确定第一个矩形的位置，如图红色矩形。第二步：若两个矩形有交集，第二个矩形【绿色的四个】应在在如图的临界位置，即第二个矩形应落在黑色矩形范围内才会有交集。">
+<meta property="og:image" content="http://i.imgur.com/arE2OzB.jpg">
+<meta property="og:updated_time" content="2016-09-25T10:54:45.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="PHP之解决两个矩形是否有交集">
+<meta name="twitter:description" content="思路：判断点是否在面的范围内。假设给定的初始值为2,2,2,2,1,1,1,1即第一个矩形坐标为（2,2）长高也为2，第二个矩形同理。但是我们先不讨论第二个矩形的坐标（1,1）。红圆圈的坐标（$xleftup，$yleftup）。第一步：首先我们能确定第一个矩形的位置，如图红色矩形。第二步：若两个矩形有交集，第二个矩形【绿色的四个】应在在如图的临界位置，即第二个矩形应落在黑色矩形范围内才会有交集。">
+<meta name="twitter:image" content="http://i.imgur.com/arE2OzB.jpg">
 
 
 
@@ -117,9 +116,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://lionspace.cn/2016/09/24/hello-world/"/>
+  <link rel="canonical" href="http://lionspace.cn/2016/09/09/PHP之解决两个矩形是否有交集/"/>
 
-  <title> Hello World | lion </title>
+  <title> PHP之解决两个矩形是否有交集 | lion </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -239,7 +238,7 @@ Quick">
             
             
               
-                Hello World
+                PHP之解决两个矩形是否有交集
               
             
           </h1>
@@ -251,11 +250,30 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T23:18:29+08:00" content="2016-09-24">
-              2016-09-24
+            <time itemprop="dateCreated" datetime="2016-09-09T21:14:20+08:00" content="2016-09-09">
+              2016-09-09
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -279,15 +297,7 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>思路：判断点是否在面的范围内。<br>假设给定的初始值为2,2,2,2,1,1,1,1即第一个矩形坐标为（2,2）长高也为2，第二个矩形同理。但是我们先不讨论第二个矩形的坐标（1,1）。红圆圈的坐标（$xleftup，$yleftup）。<br>第一步：首先我们能确定第一个矩形的位置，如图红色矩形。<br>第二步：若两个矩形有交集，第二个矩形【绿色的四个】应在在如图的临界位置，即第二个矩形应落在黑色矩形范围内才会有交集。（绿色的矩形是根据第二个矩形的长和高都为1来扩展延伸的）<a id="more"></a><br>第三步：既然已确定第二个矩形的落下范围，即可求得，第二个矩形的左上角的点，应落在如图蓝色矩形范围内才会有交集。<br>第四步：判断给定的第二个矩形的左上角的坐标是否在蓝色范围内，若在，即有交集，不在，则没交集。<br><img src="http://i.imgur.com/arE2OzB.jpg" alt=""><br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">class Juxing&#123;</div><div class="line"></div><div class="line">    private $x1;</div><div class="line">    private $y1;</div><div class="line">    private $width1; //宽</div><div class="line">    private $height1; //高</div><div class="line">    private $x2;</div><div class="line">    private $y2;</div><div class="line">    private $width2;</div><div class="line">    private $height2;</div><div class="line"></div><div class="line">    function __construct($x1,$y1,$width1,$height1,$x2,$y2,$width2,$height2)&#123;</div><div class="line">        $this-&gt;x1 = $x1;</div><div class="line">        $this-&gt;y1 = $y1;</div><div class="line">        $this-&gt;width1 = $width1;</div><div class="line">        $this-&gt;height1 = $height1;</div><div class="line">        $this-&gt;x2 = $x2;</div><div class="line">        $this-&gt;y2 = $y2;</div><div class="line">        $this-&gt;width2 = $width2;</div><div class="line">        $this-&gt;height2 = $height2;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function panduan()&#123;</div><div class="line"></div><div class="line">        $xleftup = $this-&gt;x1 - $this-&gt;width2;</div><div class="line">        $yleftup = $this-&gt;y1 - $this-&gt;height2;</div><div class="line">        $width12 = $xleftup + $this-&gt;width2 + $this-&gt;width1;</div><div class="line">        $height12 = $yleftup + $this-&gt;height2 + $this-&gt;height1;</div><div class="line"></div><div class="line">        if (($this-&gt;x2 &gt;= $xleftup)&amp;&amp;($this-&gt;x2 &lt;= $width12)) &#123;</div><div class="line">            if (($this-&gt;y2 &gt;= $yleftup)&amp;&amp;($this-&gt;y2 &lt;= $height12)) &#123;</div><div class="line">                echo &quot;两个矩形有交集&quot;;</div><div class="line">            &#125;else&#123;</div><div class="line">                echo &quot;并没有交集&quot;;</div><div class="line">            &#125;</div><div class="line">        &#125;else&#123;</div><div class="line">            echo &quot;两个矩形并没有交集&quot;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$J1 = new Juxing(1,2,2,4,4,3,2,1);</div><div class="line">$J1-&gt;panduan();</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -308,21 +318,23 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/09/PHP之解决两个矩形是否有交集/" rel="next" title="PHP之解决两个矩形是否有交集">
-                <i class="fa fa-chevron-left"></i> PHP之解决两个矩形是否有交集
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/25/first/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/24/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -437,7 +449,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
         </section>
