@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="Hello World!">
+<meta name="description" content="选择一个强大而好用的文本编辑器，是进行Web开发和编程必不可少的一部分，甚至对于通常的写作，一个舒服的文本编辑器也会让你写起文字来觉得优雅而潇洒。Sublime Text是一款不错的编辑器，简洁且跨平台，但对新手来说配置起来有些麻烦，对于通常使用Windows的用户来说，Notepad++或许是一个更好的选择。Notepad++（NPP），顾名思义，就是一个加强版的记事本了，虽然只多了两个加号，但">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first">
-<meta property="og:url" content="http://lionspace.cn/2016/09/25/first /index.html">
+<meta property="og:title" content="优化Markdown在Notepad++中的使用体验">
+<meta property="og:url" content="http://lionspace.cn/2016/09/26/1/index.html">
 <meta property="og:site_name" content="lion">
-<meta property="og:description" content="Hello World!">
-<meta property="og:updated_time" content="2016-09-26T11:01:36.508Z">
+<meta property="og:description" content="选择一个强大而好用的文本编辑器，是进行Web开发和编程必不可少的一部分，甚至对于通常的写作，一个舒服的文本编辑器也会让你写起文字来觉得优雅而潇洒。Sublime Text是一款不错的编辑器，简洁且跨平台，但对新手来说配置起来有些麻烦，对于通常使用Windows的用户来说，Notepad++或许是一个更好的选择。Notepad++（NPP），顾名思义，就是一个加强版的记事本了，虽然只多了两个加号，但">
+<meta property="og:updated_time" content="2016-09-26T12:05:47.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first">
-<meta name="twitter:description" content="Hello World!">
+<meta name="twitter:title" content="优化Markdown在Notepad++中的使用体验">
+<meta name="twitter:description" content="选择一个强大而好用的文本编辑器，是进行Web开发和编程必不可少的一部分，甚至对于通常的写作，一个舒服的文本编辑器也会让你写起文字来觉得优雅而潇洒。Sublime Text是一款不错的编辑器，简洁且跨平台，但对新手来说配置起来有些麻烦，对于通常使用Windows的用户来说，Notepad++或许是一个更好的选择。Notepad++（NPP），顾名思义，就是一个加强版的记事本了，虽然只多了两个加号，但">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://lionspace.cn/2016/09/25/first /"/>
+  <link rel="canonical" href="http://lionspace.cn/2016/09/26/1/"/>
 
-  <title> first | lion </title>
+  <title> 优化Markdown在Notepad++中的使用体验 | lion </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -236,7 +236,7 @@
             
             
               
-                first
+                优化Markdown在Notepad++中的使用体验
               
             
           </h1>
@@ -248,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-25T18:56:06+08:00" content="2016-09-25">
-              2016-09-25
+            <time itemprop="dateCreated" datetime="2016-09-26T20:05:47+08:00" content="2016-09-26">
+              2016-09-26
             </time>
           </span>
 
@@ -295,7 +295,11 @@
       
 
       
-        <p>Hello World!</p>
+        <p>选择一个强大而好用的文本编辑器，是进行Web开发和编程必不可少的一部分，甚至对于通常的写作，一个舒服的文本编辑器也会让你写起文字来觉得优雅而潇洒。Sublime Text是一款不错的编辑器，简洁且跨平台，但对新手来说配置起来有些麻烦，对于通常使用Windows的用户来说，Notepad++或许是一个更好的选择。Notepad++（NPP），顾名思义，就是一个加强版的记事本了，虽然只多了两个加号，但功能甩系统记事本可不是一里两里。<br>Notepad++本身除了作为一款强大的编辑器外，主要魅力还有由NPP社区和开发人员贡献的种类众多的插件，这些插件几乎可以满足我们各种各样的需求，解决大大小小的问题。找到适合自己的插件，并且灵活使用，将有效提高我们的开发和写作效率。</p>
+<p>Notepad++安装插件的两个方法：一个是通过软件自带的Plugin Manager来查找可用插件，勾选安装；还有个就是直接下载插件的dll文件，复制到Notepad++安装目录的plugins目录下，再重启软件即可。</p>
+<p>Markdown作为一种日渐流行的轻量级标记语言，日常使用自然是少不了的，而到目前为止，Notepad++上还没有一个称得上完美的方法来支持Markdown，只能自己动手改善，这里总结目前找到的优化Markdown在Notepad++中使用体验的两个方面。</p>
+<p>实现Markdown语法高亮</p>
+<p>首先下载Markdown规则文件，然后可以通过Notepad++中的 语言 -&gt; 自定义语言格式 -&gt; 导入 来实现；也可以通过手动操作实现，点击 开始菜单 -&gt; 运行(或者直接按 Win+R) -&gt; 输入 %APPDATA%\Notepad++，将userDefineLang.xml放置到此目录（如果已有同名文件存在，则将下载文件的内容增加进去，方法参考<a href="https://github.com/Edditoria/markdown_npp_zenburn），重启软件。" target="_blank" rel="external">https://github.com/Edditoria/markdown_npp_zenburn），重启软件。</a></p>
 
       
     </div>
@@ -327,17 +331,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/09/25/first /" rel="next" title="first">
+                <i class="fa fa-chevron-left"></i> first
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/26/1/" rel="prev" title="优化Markdown在Notepad++中的使用体验">
-                优化Markdown在Notepad++中的使用体验 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
