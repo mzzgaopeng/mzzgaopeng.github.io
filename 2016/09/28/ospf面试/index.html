@@ -84,22 +84,19 @@
 
 
 
-<meta name="description" content="###1. OSPF邻接形成过程？互发HELLO包，形成双向通信根据接口网络类型选DR/BDR发第一个DBD，选主从进行DBD同步交互LSR、LSU、LSack进行LSA同步同步结束后进入FULL
-###2. OSPF中承载完整的链路状态的包？LSU
-###3. 链路状态协议和距离矢量协议的比较？(1)路由传递方法不同 （2）收敛速度不同 （3）度量值不同 （4）有环无环（5）应用环境不同 （6）">
+<meta name="description" content="1. OSPF邻接形成过程？互发HELLO包，形成双向通信根据接口网络类型选DR/BDR发第一个DBD，选主从进行DBD同步交互LSR、LSU、LSack进行LSA同步同步结束后进入FULL
+2. OSPF中承载完整的链路状态的包？LSU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OSPF常见面试题">
 <meta property="og:url" content="http://lionspace.cn/2016/09/28/ospf面试/index.html">
 <meta property="og:site_name" content="lion">
-<meta property="og:description" content="###1. OSPF邻接形成过程？互发HELLO包，形成双向通信根据接口网络类型选DR/BDR发第一个DBD，选主从进行DBD同步交互LSR、LSU、LSack进行LSA同步同步结束后进入FULL
-###2. OSPF中承载完整的链路状态的包？LSU
-###3. 链路状态协议和距离矢量协议的比较？(1)路由传递方法不同 （2）收敛速度不同 （3）度量值不同 （4）有环无环（5）应用环境不同 （6）">
-<meta property="og:updated_time" content="2016-09-27T23:53:11.546Z">
+<meta property="og:description" content="1. OSPF邻接形成过程？互发HELLO包，形成双向通信根据接口网络类型选DR/BDR发第一个DBD，选主从进行DBD同步交互LSR、LSU、LSack进行LSA同步同步结束后进入FULL
+2. OSPF中承载完整的链路状态的包？LSU">
+<meta property="og:updated_time" content="2016-09-27T23:56:34.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OSPF常见面试题">
-<meta name="twitter:description" content="###1. OSPF邻接形成过程？互发HELLO包，形成双向通信根据接口网络类型选DR/BDR发第一个DBD，选主从进行DBD同步交互LSR、LSU、LSack进行LSA同步同步结束后进入FULL
-###2. OSPF中承载完整的链路状态的包？LSU
-###3. 链路状态协议和距离矢量协议的比较？(1)路由传递方法不同 （2）收敛速度不同 （3）度量值不同 （4）有环无环（5）应用环境不同 （6）">
+<meta name="twitter:description" content="1. OSPF邻接形成过程？互发HELLO包，形成双向通信根据接口网络类型选DR/BDR发第一个DBD，选主从进行DBD同步交互LSR、LSU、LSack进行LSA同步同步结束后进入FULL
+2. OSPF中承载完整的链路状态的包？LSU">
 
 
 
@@ -180,7 +177,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -190,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -200,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -210,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -293,7 +290,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-09-28T07:49:41+08:00" content="2016-09-28">
               2016-09-28
             </time>
@@ -305,7 +302,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/网络工程/" itemprop="url" rel="index">
@@ -348,60 +345,38 @@
       
 
       
-        <p>###1. OSPF邻接形成过程？<br>互发HELLO包，形成双向通信<br>根据接口网络类型选DR/BDR<br>发第一个DBD，选主从<br>进行DBD同步<br>交互LSR、LSU、LSack进行LSA同步<br>同步结束后进入FULL</p>
-<p>###2. OSPF中承载完整的链路状态的包？<br>LSU</p>
-<p>###3. 链路状态协议和距离矢量协议的比较？<br>(1)路由传递方法不同 （2）收敛速度不同 （3）度量值不同 （4）有环无环<br>（5）应用环境不同 （6）有无跳数限制 （7）生成路由的算法不同 （8）对设备资源的消耗不同</p>
-<p>###4. OSPF防环措施？<br>（1）SFP算法无环 （2）更新信息中携始发者信息，并且为一手信息 （3）多区域时要求非骨干区域，必须连接骨干区域，才能互通路由，防止了始发者信息的丧失，避免了环路。</p>
-<p>###5. OSPF是纯链路状态的协议吗？<br>（1）单区域时是纯的链路状态协议，而多区域时，区域间路由使用的是距离矢量算法。</p>
-<p>###6. OSPF中DR选举的意义？DR选举时的网络类型？DR和其它路由器的关系？<br>（1）提高LSA同步效率。（2）广播型和NBMA要选DR （3）DR与其它路由器为邻接关系。</p>
-<p>###7. OSPF的NSSA区域和其它区域的区别？<br>比普通区域相比：去除了四类五类LSA，增加了七类LSA<br>和STUB区域相比：他可以单向引入外部路由</p>
-<p>###8. OSPF的LSA类型，主要由谁生成？<br>一类 路由器LSA 所有路由器 本区域 描述直连拓扑信息<br>二类 网络LSA DR 本区域 描述本网段的掩码和邻居<br>三类 网络汇总LSA ABR 相关区域 区域间的路由信息<br>四类 ASBR汇总LSA ABR 相关区域 去往ASBR的一条路由信息<br>五类 外部LSA ASBR 整个AS AS外部的路由信息<br>七类 NSSA外部LSA ASBR 本NSSA区域 AS外部的路由信息</p>
-<p>###9. IBGP为什么采用全互联？不采用全互联怎么部署？<br>（1）解决IBGP水平分割问题 （2）反射器或联盟</p>
-<p>###10. 路由反射器的反射原则？<br>（1）客户端的路由反射给所有邻居 （2）非客户端的路由反射给客户端 （3）只发最优路由 （4）两个非客户端路由不能互通 （5）反射不改变路由属性</p>
-<p>###11. OSPF邻居形成过程？</p>
-<p>###12. OSPF有几类LSA？</p>
-<p>###13. OSPF的NSSA区域与其它区域的通信方法？</p>
-<p>###14. PPP协商过程？</p>
-<p>###15. OSPF没有形成FULL状态的原因？<br>（1）HELLO和失效时间不一致 （2）接口网络类型不一致 （3）区域不一致 （4）MA网络中掩码不一致 （5）版本不一致 （6）认证不通过 （7）ROUTER-ID 相同 （8）MA网络中优先级都为0 （9）MTU不一致 （10）特殊区域标记不一样 （11）底层不通 （12）NBMA网络中没有指邻居</p>
-<p>###16. OSPF在NBMA网络要配些什么？<br>（1）NBMA网络中没有指邻居<br>（2）如果是一个非全互联的NBMA环境，还需要手工指DR<br>（3）考虑到非全互联的NBMA环境的分支节点的连通性，还要手工写静态映射。或者修改接口网络类型为点到多点。</p>
-<p>###17. OSPF虚链路在什么情况下用到？为什么要用虚链路？<br>（1）区域不连续或区域0被分割会用到<br>（2）因为所有区域必须挂接到区域0，当区域0被分割后，两个被分割的区域0路由不能互通。</p>
-<p>###18. OSPF虚链路的作用？为什么有骨干区域？<br>（1）骨干区域的设置是为了防止多区域时区域间路由产生环路</p>
-<p>###19. RIP路由协议环路问题解决机制？<br>（1）水平分割 （2）最大16跳 （3）路由毒化 （4）毒性逆转 （5）抑制计时器 （6）触发更新</p>
-<p>###20. OSPF邻居形成过程？</p>
-<p>###21. PPP协商过程？<br>（1）检测到载波进入链路建立阶段（2）进行LCP协商 （3）进行认证 （4）NCP（IPCP）协商</p>
-<p>###22. CHAP认证过程？<br>（1）主认证方发起挑战，携带主认证方的用户名和随机数<br>（2）被认证方根据用户名查用户数据库，找到对应密码与随机数进行HASH，发送用户名和HASH值<br>（3）主认证方根据用户名查用户数据库，找到对应的密码与随机数进行HASH，对比两个HASH值，一致则认证通过，不一致则认证失败。</p>
-<p>###23. LSA5外部路由可以在ABR上做汇总吗？<br>（1）可以在NSSA区域的ABR上做汇总，因为NSSA区域的ABR要做七类转五类 （2）当该NSSA区域有两个ABR时只能在ROUTER-ID大的ABR上做汇总才有效。（3）*ABR上直接引入外部路由</p>
-<p>###1.OSPF有哪些区域?<br>（1）骨干区域 （2）普通区域 （3）STUB区域 完全STUB区域（4）NSSA区域 完全NSSA区域</p>
-<p>###2.stub区域特点?nssa区域特点?<br>STUB 一类二类三类<br>NSSA 一类二类三类七类 （不自动下发缺省路由）<br>完全STUB 一类二类 （三类缺省）<br>完全NSSA 一类二类七类 （三类缺省）</p>
-<p>###3.OSPF有那几种协议包?以及他们的作用?<br>（1）HELLO 报文 建立邻居形成2-WAY，保活，选DR/BDR<br>（2）DBD报文 选举主从，描述LSDB<br>（3）LSR报文 请求LSA<br>（4）LSU报文 发送完整的LSA<br>（5）LSACK报文 确认收到LSU</p>
-<p>###4.OSPF划区域的好处?<br>（1）减少LSA的洪泛 （2）减小了LSDB （3）简化了路由计算 （4）提升了路由的可管理性 （5）使路由汇总和特殊区域成为可能</p>
-<p>###8.CHAP认证过程?</p>
-<p>###10、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。<br>（1）选去目标网络开销最小的 （2）按路径类型</p>
-<p>###12、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。</p>
-<p>###13、OSPF的1类和2类外部路由之间的区别<br>（1）类型一的开销＝内部开销+外部开销<br>（2）类型二的开销＝外部开销<br>（3）类型一的路由优于类型二的路由</p>
-<p>###15有哪些项目经验，并描述一下在项目过程中出现的问题是怎么解决的,具体的技术有OSPF、VRRP、VLAN tag这三个方面的内容，问的都很深入</p>
-<p>###17、 OSPF路由协议之中有路由环路吗？怎么去解决路由环路的？怎么教导（非网络行业）用户在遇到OSPF网络中，OSPF路由器不能形成邻居的排查方法。<br>（1）OSPF自治系统内部路由无环，但外部路由可能有环路<br>（2）如何解决外部路由的防路，尽量避免双点双向重发布，如果要使用双点双向重发布，就要使用打TAG做过滤来消除环路。</p>
-<p>###18、 说说BGP路由协议与IGP路由协议的区别？BGP选路的原则是什么？<br>（1）BGP是AS之间的路由协议，IGP是AS内的路由协议<br>（2）BGP基于TCP，可以与非直连建邻居<br>（3）BGP侧重于路由管理，不负责拓扑发现<br>（4）BGP除每一次以外只作增量更新，无定期更新<br>（5）BGP侧重于路由控制，IGP侧重于路由互通<br>选路原则<br>（1）丢弃下一跳不可达<br>（2）同步状态下丢度弃未同步的<br>（3）选权重值大的（CISCO）<br>（4）选本地优先级高的<br>（5）本地始发的<br>（6）路径列表短的<br>（7）起源属性优的<br>（8）MED值小的<br>（9）EBGP优于IBGP (CISCO)<br>（10）IGP开销的小的<br>（11）ROUTER-ID小的</p>
-<p>##H3C<br>(1)如果此路由的下一跳不可达，忽略此路由<br>(2)选择本地优先级较大的路由<br>(3)选择本地路由器始发的路由(本地优先级相同)<br>(4)选择AS路径较短的路由<br>(5)依次选择起点类型为IGP,EGP,Incomplete类型的路由<br>(6)选择MED较小的路由<br>(7)选择RouterID较小的路由</p>
-<p>###24、BGP网络中为什么要实行BGP全连接？</p>
-<p>###26、 OSPF是怎么避免无环？</p>
-<p>###27、 问题六：PPP的协商过程的状态机？</p>
-<p>###28、 问在蓝狐有讲那些内容？</p>
-<p>###29、 三层交换怎么确认是三层交换还是二层交换？</p>
-<p>###34、OSPF中network的作用，区域2学到区域1路由的过程,OSPF有那些特殊区域？以及区域间路由和区域外部路由的学习的过程？<br>（1）区域1的路由器通过一类LSA将拓扑信息发给ABR，ABR将区域1的路由信息通过3类LSA发到区域0 ，区域2的ABR从区域0学到区域1的3类LAS并重新生成，发给区域2的路由器<br>（2）ASBR重发布外部路由进OSPF，以5类LSA在整AS内洪泛，ASBR所在区域的ABR还会生成4类LSA，洪泛到相关区域。内部路由器可以根据收到的4、5类LSA生成外部路由</p>
-<p>###35、IBGP邻居为什么不相互通告路由？<br>（1）IBGP的水平分割<br>（2）基于邻居的水平分割<br>（3）*路由非最优</p>
-<p>###36、 你认为客服技术支持是什么概念？你在蓝狐的课程体系中是在什么班级中？</p>
-<p>###44、OSPF 中有那些LSA？</p>
-<p>###45、LSA7是如何传播的？</p>
-<p>###46、讲一下BGP的属性？<br>过渡和非过渡的 必遵和可选的<br>1、Origin<br>2、AS-Path<br>3、Next hop<br>4、MED<br>5、Local-Preference<br>6、Community</p>
-<p>###47、BGP属性在MPLS中的应用？选路控制</p>
-<p>###48、一台三层交换机在收到一个数据包的时候，它是怎么来选者是二层交换还是三层交换？</p>
-<p>###53、OSPF 中区域1与区域0相连，区域0与区域2相连，问区域1的路由如何传播到区域2的？如果不想区域2中有区域一的路由你有哪些解决方案？</p>
-<p>###54、讲一下BGP的属性如MED等？</p>
-<p>###56、 讲一下BGP邻居的学习过程？BGP的路由同步及为什么要关闭路由同步？<br>（1）从IBGP邻居学到的路由，必须在IGP路由表中有，才能发给EBGP邻居。<br>（2）虽然路由同步可以避免路由黑洞，但实现同步本身很困难，因为将BGP的路由注入到IGP来实现同步是不可取的。所以为了在非同步的状态实现路由的互通，只有关闭同步。</p>
-<p>###57、OSPF的邻居的学习过程？在Loading状态的时候需要交互些什么？为什么要选举DR/BDR？</p>
-<p>###58、 在OSPF中为什么需要骨干区域Area0？</p>
-
+        <h3 id="1-OSPF邻接形成过程？"><a href="#1-OSPF邻接形成过程？" class="headerlink" title="1. OSPF邻接形成过程？"></a>1. OSPF邻接形成过程？</h3><p>互发HELLO包，形成双向通信<br>根据接口网络类型选DR/BDR<br>发第一个DBD，选主从<br>进行DBD同步<br>交互LSR、LSU、LSack进行LSA同步<br>同步结束后进入FULL</p>
+<h3 id="2-OSPF中承载完整的链路状态的包？"><a href="#2-OSPF中承载完整的链路状态的包？" class="headerlink" title="2. OSPF中承载完整的链路状态的包？"></a>2. OSPF中承载完整的链路状态的包？</h3><p>LSU<a id="more"></a></p>
+<h3 id="3-链路状态协议和距离矢量协议的比较？"><a href="#3-链路状态协议和距离矢量协议的比较？" class="headerlink" title="3. 链路状态协议和距离矢量协议的比较？"></a>3. 链路状态协议和距离矢量协议的比较？</h3><p>(1)路由传递方法不同 （2）收敛速度不同 （3）度量值不同 （4）有环无环<br>（5）应用环境不同 （6）有无跳数限制 （7）生成路由的算法不同 （8）对设备资源的消耗不同</p>
+<h3 id="4-OSPF防环措施？"><a href="#4-OSPF防环措施？" class="headerlink" title="4. OSPF防环措施？"></a>4. OSPF防环措施？</h3><p>（1）SFP算法无环 （2）更新信息中携始发者信息，并且为一手信息 （3）多区域时要求非骨干区域，必须连接骨干区域，才能互通路由，防止了始发者信息的丧失，避免了环路。</p>
+<h3 id="5-OSPF是纯链路状态的协议吗？"><a href="#5-OSPF是纯链路状态的协议吗？" class="headerlink" title="5. OSPF是纯链路状态的协议吗？"></a>5. OSPF是纯链路状态的协议吗？</h3><p>（1）单区域时是纯的链路状态协议，而多区域时，区域间路由使用的是距离矢量算法。</p>
+<h3 id="6-OSPF中DR选举的意义？DR选举时的网络类型？DR和其它路由器的关系？"><a href="#6-OSPF中DR选举的意义？DR选举时的网络类型？DR和其它路由器的关系？" class="headerlink" title="6. OSPF中DR选举的意义？DR选举时的网络类型？DR和其它路由器的关系？"></a>6. OSPF中DR选举的意义？DR选举时的网络类型？DR和其它路由器的关系？</h3><p>（1）提高LSA同步效率。（2）广播型和NBMA要选DR （3）DR与其它路由器为邻接关系。</p>
+<h3 id="7-OSPF的NSSA区域和其它区域的区别？"><a href="#7-OSPF的NSSA区域和其它区域的区别？" class="headerlink" title="7. OSPF的NSSA区域和其它区域的区别？"></a>7. OSPF的NSSA区域和其它区域的区别？</h3><p>比普通区域相比：去除了四类五类LSA，增加了七类LSA<br>和STUB区域相比：他可以单向引入外部路由</p>
+<h3 id="8-OSPF的LSA类型，主要由谁生成？"><a href="#8-OSPF的LSA类型，主要由谁生成？" class="headerlink" title="8. OSPF的LSA类型，主要由谁生成？"></a>8. OSPF的LSA类型，主要由谁生成？</h3><p>一类 路由器LSA 所有路由器 本区域 描述直连拓扑信息<br>二类 网络LSA DR 本区域 描述本网段的掩码和邻居<br>三类 网络汇总LSA ABR 相关区域 区域间的路由信息<br>四类 ASBR汇总LSA ABR 相关区域 去往ASBR的一条路由信息<br>五类 外部LSA ASBR 整个AS AS外部的路由信息<br>七类 NSSA外部LSA ASBR 本NSSA区域 AS外部的路由信息</p>
+<h3 id="9-IBGP为什么采用全互联？不采用全互联怎么部署？"><a href="#9-IBGP为什么采用全互联？不采用全互联怎么部署？" class="headerlink" title="9. IBGP为什么采用全互联？不采用全互联怎么部署？"></a>9. IBGP为什么采用全互联？不采用全互联怎么部署？</h3><p>（1）解决IBGP水平分割问题 （2）反射器或联盟</p>
+<h3 id="10-路由反射器的反射原则？"><a href="#10-路由反射器的反射原则？" class="headerlink" title="10. 路由反射器的反射原则？"></a>10. 路由反射器的反射原则？</h3><p>（1）客户端的路由反射给所有邻居 （2）非客户端的路由反射给客户端 （3）只发最优路由 （4）两个非客户端路由不能互通 （5）反射不改变路由属性</p>
+<h3 id="11-OSPF邻居形成过程？"><a href="#11-OSPF邻居形成过程？" class="headerlink" title="11. OSPF邻居形成过程？"></a>11. OSPF邻居形成过程？</h3><h3 id="12-OSPF有几类LSA？"><a href="#12-OSPF有几类LSA？" class="headerlink" title="12. OSPF有几类LSA？"></a>12. OSPF有几类LSA？</h3><h3 id="13-OSPF的NSSA区域与其它区域的通信方法？"><a href="#13-OSPF的NSSA区域与其它区域的通信方法？" class="headerlink" title="13. OSPF的NSSA区域与其它区域的通信方法？"></a>13. OSPF的NSSA区域与其它区域的通信方法？</h3><h3 id="14-PPP协商过程？"><a href="#14-PPP协商过程？" class="headerlink" title="14. PPP协商过程？"></a>14. PPP协商过程？</h3><h3 id="15-OSPF没有形成FULL状态的原因？"><a href="#15-OSPF没有形成FULL状态的原因？" class="headerlink" title="15. OSPF没有形成FULL状态的原因？"></a>15. OSPF没有形成FULL状态的原因？</h3><p>（1）HELLO和失效时间不一致 （2）接口网络类型不一致 （3）区域不一致 （4）MA网络中掩码不一致 （5）版本不一致 （6）认证不通过 （7）ROUTER-ID 相同 （8）MA网络中优先级都为0 （9）MTU不一致 （10）特殊区域标记不一样 （11）底层不通 （12）NBMA网络中没有指邻居</p>
+<h3 id="16-OSPF在NBMA网络要配些什么？"><a href="#16-OSPF在NBMA网络要配些什么？" class="headerlink" title="16. OSPF在NBMA网络要配些什么？"></a>16. OSPF在NBMA网络要配些什么？</h3><p>（1）NBMA网络中没有指邻居<br>（2）如果是一个非全互联的NBMA环境，还需要手工指DR<br>（3）考虑到非全互联的NBMA环境的分支节点的连通性，还要手工写静态映射。或者修改接口网络类型为点到多点。</p>
+<h3 id="17-OSPF虚链路在什么情况下用到？为什么要用虚链路？"><a href="#17-OSPF虚链路在什么情况下用到？为什么要用虚链路？" class="headerlink" title="17. OSPF虚链路在什么情况下用到？为什么要用虚链路？"></a>17. OSPF虚链路在什么情况下用到？为什么要用虚链路？</h3><p>（1）区域不连续或区域0被分割会用到<br>（2）因为所有区域必须挂接到区域0，当区域0被分割后，两个被分割的区域0路由不能互通。</p>
+<h3 id="18-OSPF虚链路的作用？为什么有骨干区域？"><a href="#18-OSPF虚链路的作用？为什么有骨干区域？" class="headerlink" title="18. OSPF虚链路的作用？为什么有骨干区域？"></a>18. OSPF虚链路的作用？为什么有骨干区域？</h3><p>（1）骨干区域的设置是为了防止多区域时区域间路由产生环路</p>
+<h3 id="19-RIP路由协议环路问题解决机制？"><a href="#19-RIP路由协议环路问题解决机制？" class="headerlink" title="19. RIP路由协议环路问题解决机制？"></a>19. RIP路由协议环路问题解决机制？</h3><p>（1）水平分割 （2）最大16跳 （3）路由毒化 （4）毒性逆转 （5）抑制计时器 （6）触发更新</p>
+<h3 id="20-OSPF邻居形成过程？"><a href="#20-OSPF邻居形成过程？" class="headerlink" title="20. OSPF邻居形成过程？"></a>20. OSPF邻居形成过程？</h3><h3 id="21-PPP协商过程？"><a href="#21-PPP协商过程？" class="headerlink" title="21. PPP协商过程？"></a>21. PPP协商过程？</h3><p>（1）检测到载波进入链路建立阶段（2）进行LCP协商 （3）进行认证 （4）NCP（IPCP）协商</p>
+<h3 id="22-CHAP认证过程？"><a href="#22-CHAP认证过程？" class="headerlink" title="22. CHAP认证过程？"></a>22. CHAP认证过程？</h3><p>（1）主认证方发起挑战，携带主认证方的用户名和随机数<br>（2）被认证方根据用户名查用户数据库，找到对应密码与随机数进行HASH，发送用户名和HASH值<br>（3）主认证方根据用户名查用户数据库，找到对应的密码与随机数进行HASH，对比两个HASH值，一致则认证通过，不一致则认证失败。</p>
+<h3 id="23-LSA5外部路由可以在ABR上做汇总吗？"><a href="#23-LSA5外部路由可以在ABR上做汇总吗？" class="headerlink" title="23. LSA5外部路由可以在ABR上做汇总吗？"></a>23. LSA5外部路由可以在ABR上做汇总吗？</h3><p>（1）可以在NSSA区域的ABR上做汇总，因为NSSA区域的ABR要做七类转五类 （2）当该NSSA区域有两个ABR时只能在ROUTER-ID大的ABR上做汇总才有效。（3）*ABR上直接引入外部路由</p>
+<h3 id="1-OSPF有哪些区域"><a href="#1-OSPF有哪些区域" class="headerlink" title="1.OSPF有哪些区域?"></a>1.OSPF有哪些区域?</h3><p>（1）骨干区域 （2）普通区域 （3）STUB区域 完全STUB区域（4）NSSA区域 完全NSSA区域</p>
+<h3 id="2-stub区域特点-nssa区域特点"><a href="#2-stub区域特点-nssa区域特点" class="headerlink" title="2.stub区域特点?nssa区域特点?"></a>2.stub区域特点?nssa区域特点?</h3><p>STUB 一类二类三类<br>NSSA 一类二类三类七类 （不自动下发缺省路由）<br>完全STUB 一类二类 （三类缺省）<br>完全NSSA 一类二类七类 （三类缺省）</p>
+<h3 id="3-OSPF有那几种协议包-以及他们的作用"><a href="#3-OSPF有那几种协议包-以及他们的作用" class="headerlink" title="3.OSPF有那几种协议包?以及他们的作用?"></a>3.OSPF有那几种协议包?以及他们的作用?</h3><p>（1）HELLO 报文 建立邻居形成2-WAY，保活，选DR/BDR<br>（2）DBD报文 选举主从，描述LSDB<br>（3）LSR报文 请求LSA<br>（4）LSU报文 发送完整的LSA<br>（5）LSACK报文 确认收到LSU</p>
+<h3 id="4-OSPF划区域的好处"><a href="#4-OSPF划区域的好处" class="headerlink" title="4.OSPF划区域的好处?"></a>4.OSPF划区域的好处?</h3><p>（1）减少LSA的洪泛 （2）减小了LSDB （3）简化了路由计算 （4）提升了路由的可管理性 （5）使路由汇总和特殊区域成为可能</p>
+<h3 id="8-CHAP认证过程"><a href="#8-CHAP认证过程" class="headerlink" title="8.CHAP认证过程?"></a>8.CHAP认证过程?</h3><h3 id="10、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。"><a href="#10、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。" class="headerlink" title="10、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。"></a>10、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。</h3><p>（1）选去目标网络开销最小的 （2）按路径类型</p>
+<h3 id="12、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。"><a href="#12、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。" class="headerlink" title="12、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。"></a>12、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。</h3><h3 id="13、OSPF的1类和2类外部路由之间的区别"><a href="#13、OSPF的1类和2类外部路由之间的区别" class="headerlink" title="13、OSPF的1类和2类外部路由之间的区别"></a>13、OSPF的1类和2类外部路由之间的区别</h3><p>（1）类型一的开销＝内部开销+外部开销<br>（2）类型二的开销＝外部开销<br>（3）类型一的路由优于类型二的路由</p>
+<h3 id="15有哪些项目经验，并描述一下在项目过程中出现的问题是怎么解决的-具体的技术有OSPF、VRRP、VLAN-tag这三个方面的内容，问的都很深入"><a href="#15有哪些项目经验，并描述一下在项目过程中出现的问题是怎么解决的-具体的技术有OSPF、VRRP、VLAN-tag这三个方面的内容，问的都很深入" class="headerlink" title="15有哪些项目经验，并描述一下在项目过程中出现的问题是怎么解决的,具体的技术有OSPF、VRRP、VLAN tag这三个方面的内容，问的都很深入"></a>15有哪些项目经验，并描述一下在项目过程中出现的问题是怎么解决的,具体的技术有OSPF、VRRP、VLAN tag这三个方面的内容，问的都很深入</h3><h3 id="17、-OSPF路由协议之中有路由环路吗？怎么去解决路由环路的？怎么教导（非网络行业）用户在遇到OSPF网络中，OSPF路由器不能形成邻居的排查方法。"><a href="#17、-OSPF路由协议之中有路由环路吗？怎么去解决路由环路的？怎么教导（非网络行业）用户在遇到OSPF网络中，OSPF路由器不能形成邻居的排查方法。" class="headerlink" title="17、 OSPF路由协议之中有路由环路吗？怎么去解决路由环路的？怎么教导（非网络行业）用户在遇到OSPF网络中，OSPF路由器不能形成邻居的排查方法。"></a>17、 OSPF路由协议之中有路由环路吗？怎么去解决路由环路的？怎么教导（非网络行业）用户在遇到OSPF网络中，OSPF路由器不能形成邻居的排查方法。</h3><p>（1）OSPF自治系统内部路由无环，但外部路由可能有环路<br>（2）如何解决外部路由的防路，尽量避免双点双向重发布，如果要使用双点双向重发布，就要使用打TAG做过滤来消除环路。</p>
+<h3 id="18、-说说BGP路由协议与IGP路由协议的区别？BGP选路的原则是什么？"><a href="#18、-说说BGP路由协议与IGP路由协议的区别？BGP选路的原则是什么？" class="headerlink" title="18、 说说BGP路由协议与IGP路由协议的区别？BGP选路的原则是什么？"></a>18、 说说BGP路由协议与IGP路由协议的区别？BGP选路的原则是什么？</h3><p>（1）BGP是AS之间的路由协议，IGP是AS内的路由协议<br>（2）BGP基于TCP，可以与非直连建邻居<br>（3）BGP侧重于路由管理，不负责拓扑发现<br>（4）BGP除每一次以外只作增量更新，无定期更新<br>（5）BGP侧重于路由控制，IGP侧重于路由互通<br>选路原则<br>（1）丢弃下一跳不可达<br>（2）同步状态下丢度弃未同步的<br>（3）选权重值大的（CISCO）<br>（4）选本地优先级高的<br>（5）本地始发的<br>（6）路径列表短的<br>（7）起源属性优的<br>（8）MED值小的<br>（9）EBGP优于IBGP (CISCO)<br>（10）IGP开销的小的<br>（11）ROUTER-ID小的</p>
+<h2 id="H3C"><a href="#H3C" class="headerlink" title="H3C"></a>H3C</h2><p>(1)如果此路由的下一跳不可达，忽略此路由<br>(2)选择本地优先级较大的路由<br>(3)选择本地路由器始发的路由(本地优先级相同)<br>(4)选择AS路径较短的路由<br>(5)依次选择起点类型为IGP,EGP,Incomplete类型的路由<br>(6)选择MED较小的路由<br>(7)选择RouterID较小的路由</p>
+<h3 id="24、BGP网络中为什么要实行BGP全连接？"><a href="#24、BGP网络中为什么要实行BGP全连接？" class="headerlink" title="24、BGP网络中为什么要实行BGP全连接？"></a>24、BGP网络中为什么要实行BGP全连接？</h3><h3 id="26、-OSPF是怎么避免无环？"><a href="#26、-OSPF是怎么避免无环？" class="headerlink" title="26、 OSPF是怎么避免无环？"></a>26、 OSPF是怎么避免无环？</h3><h3 id="27、-问题六：PPP的协商过程的状态机？"><a href="#27、-问题六：PPP的协商过程的状态机？" class="headerlink" title="27、 问题六：PPP的协商过程的状态机？"></a>27、 问题六：PPP的协商过程的状态机？</h3><h3 id="28、-问在蓝狐有讲那些内容？"><a href="#28、-问在蓝狐有讲那些内容？" class="headerlink" title="28、 问在蓝狐有讲那些内容？"></a>28、 问在蓝狐有讲那些内容？</h3><h3 id="29、-三层交换怎么确认是三层交换还是二层交换？"><a href="#29、-三层交换怎么确认是三层交换还是二层交换？" class="headerlink" title="29、 三层交换怎么确认是三层交换还是二层交换？"></a>29、 三层交换怎么确认是三层交换还是二层交换？</h3><h3 id="34、OSPF中network的作用，区域2学到区域1路由的过程-OSPF有那些特殊区域？以及区域间路由和区域外部路由的学习的过程？"><a href="#34、OSPF中network的作用，区域2学到区域1路由的过程-OSPF有那些特殊区域？以及区域间路由和区域外部路由的学习的过程？" class="headerlink" title="34、OSPF中network的作用，区域2学到区域1路由的过程,OSPF有那些特殊区域？以及区域间路由和区域外部路由的学习的过程？"></a>34、OSPF中network的作用，区域2学到区域1路由的过程,OSPF有那些特殊区域？以及区域间路由和区域外部路由的学习的过程？</h3><p>（1）区域1的路由器通过一类LSA将拓扑信息发给ABR，ABR将区域1的路由信息通过3类LSA发到区域0 ，区域2的ABR从区域0学到区域1的3类LAS并重新生成，发给区域2的路由器<br>（2）ASBR重发布外部路由进OSPF，以5类LSA在整AS内洪泛，ASBR所在区域的ABR还会生成4类LSA，洪泛到相关区域。内部路由器可以根据收到的4、5类LSA生成外部路由</p>
+<h3 id="35、IBGP邻居为什么不相互通告路由？"><a href="#35、IBGP邻居为什么不相互通告路由？" class="headerlink" title="35、IBGP邻居为什么不相互通告路由？"></a>35、IBGP邻居为什么不相互通告路由？</h3><p>（1）IBGP的水平分割<br>（2）基于邻居的水平分割<br>（3）*路由非最优</p>
+<h3 id="36、-你认为客服技术支持是什么概念？你在蓝狐的课程体系中是在什么班级中？"><a href="#36、-你认为客服技术支持是什么概念？你在蓝狐的课程体系中是在什么班级中？" class="headerlink" title="36、 你认为客服技术支持是什么概念？你在蓝狐的课程体系中是在什么班级中？"></a>36、 你认为客服技术支持是什么概念？你在蓝狐的课程体系中是在什么班级中？</h3><h3 id="44、OSPF-中有那些LSA？"><a href="#44、OSPF-中有那些LSA？" class="headerlink" title="44、OSPF 中有那些LSA？"></a>44、OSPF 中有那些LSA？</h3><h3 id="45、LSA7是如何传播的？"><a href="#45、LSA7是如何传播的？" class="headerlink" title="45、LSA7是如何传播的？"></a>45、LSA7是如何传播的？</h3><h3 id="46、讲一下BGP的属性？"><a href="#46、讲一下BGP的属性？" class="headerlink" title="46、讲一下BGP的属性？"></a>46、讲一下BGP的属性？</h3><p>过渡和非过渡的 必遵和可选的<br>1、Origin<br>2、AS-Path<br>3、Next hop<br>4、MED<br>5、Local-Preference<br>6、Community</p>
+<h3 id="47、BGP属性在MPLS中的应用？选路控制"><a href="#47、BGP属性在MPLS中的应用？选路控制" class="headerlink" title="47、BGP属性在MPLS中的应用？选路控制"></a>47、BGP属性在MPLS中的应用？选路控制</h3><h3 id="48、一台三层交换机在收到一个数据包的时候，它是怎么来选者是二层交换还是三层交换？"><a href="#48、一台三层交换机在收到一个数据包的时候，它是怎么来选者是二层交换还是三层交换？" class="headerlink" title="48、一台三层交换机在收到一个数据包的时候，它是怎么来选者是二层交换还是三层交换？"></a>48、一台三层交换机在收到一个数据包的时候，它是怎么来选者是二层交换还是三层交换？</h3><h3 id="53、OSPF-中区域1与区域0相连，区域0与区域2相连，问区域1的路由如何传播到区域2的？如果不想区域2中有区域一的路由你有哪些解决方案？"><a href="#53、OSPF-中区域1与区域0相连，区域0与区域2相连，问区域1的路由如何传播到区域2的？如果不想区域2中有区域一的路由你有哪些解决方案？" class="headerlink" title="53、OSPF 中区域1与区域0相连，区域0与区域2相连，问区域1的路由如何传播到区域2的？如果不想区域2中有区域一的路由你有哪些解决方案？"></a>53、OSPF 中区域1与区域0相连，区域0与区域2相连，问区域1的路由如何传播到区域2的？如果不想区域2中有区域一的路由你有哪些解决方案？</h3><h3 id="54、讲一下BGP的属性如MED等？"><a href="#54、讲一下BGP的属性如MED等？" class="headerlink" title="54、讲一下BGP的属性如MED等？"></a>54、讲一下BGP的属性如MED等？</h3><h3 id="56、-讲一下BGP邻居的学习过程？BGP的路由同步及为什么要关闭路由同步？"><a href="#56、-讲一下BGP邻居的学习过程？BGP的路由同步及为什么要关闭路由同步？" class="headerlink" title="56、 讲一下BGP邻居的学习过程？BGP的路由同步及为什么要关闭路由同步？"></a>56、 讲一下BGP邻居的学习过程？BGP的路由同步及为什么要关闭路由同步？</h3><p>（1）从IBGP邻居学到的路由，必须在IGP路由表中有，才能发给EBGP邻居。<br>（2）虽然路由同步可以避免路由黑洞，但实现同步本身很困难，因为将BGP的路由注入到IGP来实现同步是不可取的。所以为了在非同步的状态实现路由的互通，只有关闭同步。</p>
+<h3 id="57、OSPF的邻居的学习过程？在Loading状态的时候需要交互些什么？为什么要选举DR-BDR？"><a href="#57、OSPF的邻居的学习过程？在Loading状态的时候需要交互些什么？为什么要选举DR-BDR？" class="headerlink" title="57、OSPF的邻居的学习过程？在Loading状态的时候需要交互些什么？为什么要选举DR/BDR？"></a>57、OSPF的邻居的学习过程？在Loading状态的时候需要交互些什么？为什么要选举DR/BDR？</h3><h3 id="58、-在OSPF中为什么需要骨干区域Area0？"><a href="#58、-在OSPF中为什么需要骨干区域Area0？" class="headerlink" title="58、 在OSPF中为什么需要骨干区域Area0？"></a>58、 在OSPF中为什么需要骨干区域Area0？</h3>
       
     </div>
 
@@ -491,10 +466,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -511,7 +486,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -519,7 +494,7 @@
             <div class="site-state-item site-state-categories">
               <a href="/categories">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
@@ -528,7 +503,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -581,7 +556,7 @@
               
             
             
-              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-OSPF邻接形成过程？"><span class="nav-number">1.</span> <span class="nav-text">1. OSPF邻接形成过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-OSPF中承载完整的链路状态的包？"><span class="nav-number">2.</span> <span class="nav-text">2. OSPF中承载完整的链路状态的包？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-链路状态协议和距离矢量协议的比较？"><span class="nav-number">3.</span> <span class="nav-text">3. 链路状态协议和距离矢量协议的比较？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OSPF防环措施？"><span class="nav-number">4.</span> <span class="nav-text">4. OSPF防环措施？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-OSPF是纯链路状态的协议吗？"><span class="nav-number">5.</span> <span class="nav-text">5. OSPF是纯链路状态的协议吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-OSPF中DR选举的意义？DR选举时的网络类型？DR和其它路由器的关系？"><span class="nav-number">6.</span> <span class="nav-text">6. OSPF中DR选举的意义？DR选举时的网络类型？DR和其它路由器的关系？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-OSPF的NSSA区域和其它区域的区别？"><span class="nav-number">7.</span> <span class="nav-text">7. OSPF的NSSA区域和其它区域的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-OSPF的LSA类型，主要由谁生成？"><span class="nav-number">8.</span> <span class="nav-text">8. OSPF的LSA类型，主要由谁生成？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-IBGP为什么采用全互联？不采用全互联怎么部署？"><span class="nav-number">9.</span> <span class="nav-text">9. IBGP为什么采用全互联？不采用全互联怎么部署？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-路由反射器的反射原则？"><span class="nav-number">10.</span> <span class="nav-text">10. 路由反射器的反射原则？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-OSPF邻居形成过程？"><span class="nav-number">11.</span> <span class="nav-text">11. OSPF邻居形成过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-OSPF有几类LSA？"><span class="nav-number">12.</span> <span class="nav-text">12. OSPF有几类LSA？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-OSPF的NSSA区域与其它区域的通信方法？"><span class="nav-number">13.</span> <span class="nav-text">13. OSPF的NSSA区域与其它区域的通信方法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-PPP协商过程？"><span class="nav-number">14.</span> <span class="nav-text">14. PPP协商过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-OSPF没有形成FULL状态的原因？"><span class="nav-number">15.</span> <span class="nav-text">15. OSPF没有形成FULL状态的原因？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-OSPF在NBMA网络要配些什么？"><span class="nav-number">16.</span> <span class="nav-text">16. OSPF在NBMA网络要配些什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-OSPF虚链路在什么情况下用到？为什么要用虚链路？"><span class="nav-number">17.</span> <span class="nav-text">17. OSPF虚链路在什么情况下用到？为什么要用虚链路？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-OSPF虚链路的作用？为什么有骨干区域？"><span class="nav-number">18.</span> <span class="nav-text">18. OSPF虚链路的作用？为什么有骨干区域？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-RIP路由协议环路问题解决机制？"><span class="nav-number">19.</span> <span class="nav-text">19. RIP路由协议环路问题解决机制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-OSPF邻居形成过程？"><span class="nav-number">20.</span> <span class="nav-text">20. OSPF邻居形成过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-PPP协商过程？"><span class="nav-number">21.</span> <span class="nav-text">21. PPP协商过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-CHAP认证过程？"><span class="nav-number">22.</span> <span class="nav-text">22. CHAP认证过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-LSA5外部路由可以在ABR上做汇总吗？"><span class="nav-number">23.</span> <span class="nav-text">23. LSA5外部路由可以在ABR上做汇总吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-OSPF有哪些区域"><span class="nav-number">24.</span> <span class="nav-text">1.OSPF有哪些区域?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-stub区域特点-nssa区域特点"><span class="nav-number">25.</span> <span class="nav-text">2.stub区域特点?nssa区域特点?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-OSPF有那几种协议包-以及他们的作用"><span class="nav-number">26.</span> <span class="nav-text">3.OSPF有那几种协议包?以及他们的作用?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OSPF划区域的好处"><span class="nav-number">27.</span> <span class="nav-text">4.OSPF划区域的好处?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-CHAP认证过程"><span class="nav-number">28.</span> <span class="nav-text">8.CHAP认证过程?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。"><span class="nav-number">29.</span> <span class="nav-text">10、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。"><span class="nav-number">30.</span> <span class="nav-text">12、OSPF的选路原则；影响OSPF邻居形成的因素及解决方法。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、OSPF的1类和2类外部路由之间的区别"><span class="nav-number">31.</span> <span class="nav-text">13、OSPF的1类和2类外部路由之间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15有哪些项目经验，并描述一下在项目过程中出现的问题是怎么解决的-具体的技术有OSPF、VRRP、VLAN-tag这三个方面的内容，问的都很深入"><span class="nav-number">32.</span> <span class="nav-text">15有哪些项目经验，并描述一下在项目过程中出现的问题是怎么解决的,具体的技术有OSPF、VRRP、VLAN tag这三个方面的内容，问的都很深入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17、-OSPF路由协议之中有路由环路吗？怎么去解决路由环路的？怎么教导（非网络行业）用户在遇到OSPF网络中，OSPF路由器不能形成邻居的排查方法。"><span class="nav-number">33.</span> <span class="nav-text">17、 OSPF路由协议之中有路由环路吗？怎么去解决路由环路的？怎么教导（非网络行业）用户在遇到OSPF网络中，OSPF路由器不能形成邻居的排查方法。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18、-说说BGP路由协议与IGP路由协议的区别？BGP选路的原则是什么？"><span class="nav-number">34.</span> <span class="nav-text">18、 说说BGP路由协议与IGP路由协议的区别？BGP选路的原则是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H3C"><span class="nav-number"></span> <span class="nav-text">H3C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#24、BGP网络中为什么要实行BGP全连接？"><span class="nav-number">1.</span> <span class="nav-text">24、BGP网络中为什么要实行BGP全连接？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26、-OSPF是怎么避免无环？"><span class="nav-number">2.</span> <span class="nav-text">26、 OSPF是怎么避免无环？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27、-问题六：PPP的协商过程的状态机？"><span class="nav-number">3.</span> <span class="nav-text">27、 问题六：PPP的协商过程的状态机？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28、-问在蓝狐有讲那些内容？"><span class="nav-number">4.</span> <span class="nav-text">28、 问在蓝狐有讲那些内容？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29、-三层交换怎么确认是三层交换还是二层交换？"><span class="nav-number">5.</span> <span class="nav-text">29、 三层交换怎么确认是三层交换还是二层交换？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34、OSPF中network的作用，区域2学到区域1路由的过程-OSPF有那些特殊区域？以及区域间路由和区域外部路由的学习的过程？"><span class="nav-number">6.</span> <span class="nav-text">34、OSPF中network的作用，区域2学到区域1路由的过程,OSPF有那些特殊区域？以及区域间路由和区域外部路由的学习的过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35、IBGP邻居为什么不相互通告路由？"><span class="nav-number">7.</span> <span class="nav-text">35、IBGP邻居为什么不相互通告路由？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36、-你认为客服技术支持是什么概念？你在蓝狐的课程体系中是在什么班级中？"><span class="nav-number">8.</span> <span class="nav-text">36、 你认为客服技术支持是什么概念？你在蓝狐的课程体系中是在什么班级中？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44、OSPF-中有那些LSA？"><span class="nav-number">9.</span> <span class="nav-text">44、OSPF 中有那些LSA？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45、LSA7是如何传播的？"><span class="nav-number">10.</span> <span class="nav-text">45、LSA7是如何传播的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46、讲一下BGP的属性？"><span class="nav-number">11.</span> <span class="nav-text">46、讲一下BGP的属性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47、BGP属性在MPLS中的应用？选路控制"><span class="nav-number">12.</span> <span class="nav-text">47、BGP属性在MPLS中的应用？选路控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48、一台三层交换机在收到一个数据包的时候，它是怎么来选者是二层交换还是三层交换？"><span class="nav-number">13.</span> <span class="nav-text">48、一台三层交换机在收到一个数据包的时候，它是怎么来选者是二层交换还是三层交换？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53、OSPF-中区域1与区域0相连，区域0与区域2相连，问区域1的路由如何传播到区域2的？如果不想区域2中有区域一的路由你有哪些解决方案？"><span class="nav-number">14.</span> <span class="nav-text">53、OSPF 中区域1与区域0相连，区域0与区域2相连，问区域1的路由如何传播到区域2的？如果不想区域2中有区域一的路由你有哪些解决方案？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54、讲一下BGP的属性如MED等？"><span class="nav-number">15.</span> <span class="nav-text">54、讲一下BGP的属性如MED等？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#56、-讲一下BGP邻居的学习过程？BGP的路由同步及为什么要关闭路由同步？"><span class="nav-number">16.</span> <span class="nav-text">56、 讲一下BGP邻居的学习过程？BGP的路由同步及为什么要关闭路由同步？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#57、OSPF的邻居的学习过程？在Loading状态的时候需要交互些什么？为什么要选举DR-BDR？"><span class="nav-number">17.</span> <span class="nav-text">57、OSPF的邻居的学习过程？在Loading状态的时候需要交互些什么？为什么要选举DR/BDR？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#58、-在OSPF中为什么需要骨干区域Area0？"><span class="nav-number">18.</span> <span class="nav-text">58、 在OSPF中为什么需要骨干区域Area0？</span></a></li></ol></div>
             
           </div>
         </section>
@@ -608,7 +583,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
