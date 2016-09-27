@@ -238,6 +238,130 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/27/ospf邻居简历起来条件/" itemprop="url">
+                  OSPF邻居简历起来的必要条件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-27T18:41:53+08:00" content="2016-09-27">
+              2016-09-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">markdown</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="以下是OSPF邻居建立的必要条件"><a href="#以下是OSPF邻居建立的必要条件" class="headerlink" title="以下是OSPF邻居建立的必要条件"></a>以下是OSPF邻居建立的必要条件</h3><blockquote>
+<p>1.区域号要一致</p>
+<p>2.计时器要一致</p>
+<p>3.认证</p>
+<p>4.区域类型（如STUB/NSSA）</p>
+<p>5.主IP地址跟对方的主IP地址需在同一网段内（EIGRP可以不用，可以使用辅助地址建邻居）</p>
+<p>6.接口子网掩码（多址网络需要一致、点对点链路无需完全一致，只需在同一网段内即可）</p>
+<p>7.MTU（双发接口的MTU不一致，会卡在EXSTART状态，并重传LSA）</p>
+<p>8.网络类型（某些情况不会影响邻居建立，会影响路由的生成）</p>
+<p>9.RID在区域内需唯一</p>
+<p>10.优先级（如果都为0则无法建立邻接关系，无法交换LSA)</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/27/ospf/" itemprop="url">
                   OSPF的报文格式
                 </a>
@@ -818,7 +942,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
