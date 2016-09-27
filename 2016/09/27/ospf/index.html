@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="网络工程," />
 
 
 
@@ -84,15 +84,26 @@
 
 
 
-<meta name="description" content="lion">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lion">
-<meta property="og:url" content="http://lionspace.cn/index.html">
+<meta name="description" content="OSPF报文类型及其工作原理要理解OSPF路由协议的工作原理，特别是路由更新机制，首先就要对它的各种报文格式有一个全面的了解。OSPF报文主要有5种：Hello报文、DD （Database Description，数据库描述）报文、LSR （LinkState Request，链路状态请求）报文、LSU（LinkState Update，链路状态更新）报文和LSAck（LinkState Ack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OSPF的报文格式">
+<meta property="og:url" content="http://lionspace.cn/2016/09/27/ospf/index.html">
 <meta property="og:site_name" content="lion">
-<meta property="og:description" content="lion">
+<meta property="og:description" content="OSPF报文类型及其工作原理要理解OSPF路由协议的工作原理，特别是路由更新机制，首先就要对它的各种报文格式有一个全面的了解。OSPF报文主要有5种：Hello报文、DD （Database Description，数据库描述）报文、LSR （LinkState Request，链路状态请求）报文、LSU（LinkState Update，链路状态更新）报文和LSAck（LinkState Ack">
+<meta property="og:image" content="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229666VZo8.jpg">
+<meta property="og:image" content="http://blog.chinaunix.net/attachment/201307/31/10659021_137522968408BF.jpg">
+<meta property="og:image" content="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229701Prmy.jpg">
+<meta property="og:image" content="http://i.imgur.com/bK86Fd1.jpg">
+<meta property="og:image" content="http://i.imgur.com/HEPPKU5.jpg">
+<meta property="og:image" content="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229716OOh9.jpg">
+<meta property="og:image" content="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229727hM1h.jpg">
+<meta property="og:image" content="http://i.imgur.com/jYzQjvJ.jpg">
+<meta property="og:image" content="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229741UUah.jpg">
+<meta property="og:updated_time" content="2016-09-27T04:28:03.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lion">
-<meta name="twitter:description" content="lion">
+<meta name="twitter:title" content="OSPF的报文格式">
+<meta name="twitter:description" content="OSPF报文类型及其工作原理要理解OSPF路由协议的工作原理，特别是路由更新机制，首先就要对它的各种报文格式有一个全面的了解。OSPF报文主要有5种：Hello报文、DD （Database Description，数据库描述）报文、LSR （LinkState Request，链路状态请求）报文、LSU（LinkState Update，链路状态更新）报文和LSAck（LinkState Ack">
+<meta name="twitter:image" content="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229666VZo8.jpg">
 
 
 
@@ -113,9 +124,9 @@
 
 
 
-  <link rel="canonical" href="http://lionspace.cn/"/>
+  <link rel="canonical" href="http://lionspace.cn/2016/09/27/ospf/"/>
 
-  <title> lion </title>
+  <title> OSPF的报文格式 | lion </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -136,9 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,9 +224,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -237,10 +246,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/27/ospf/" itemprop="url">
-                  OSPF的报文格式
-                </a>
+                OSPF的报文格式
               
             
           </h1>
@@ -299,9 +305,7 @@
       
 
       
-        
-          
-            <h1 id="OSPF报文类型及其工作原理"><a href="#OSPF报文类型及其工作原理" class="headerlink" title="OSPF报文类型及其工作原理"></a>OSPF报文类型及其工作原理</h1><p>要理解OSPF路由协议的工作原理，特别是路由更新机制，首先就要对它的各种报文格式有一个全面的了解。OSPF报文主要有5种：Hello报文、DD （Database Description，数据库描述）报文、LSR （LinkState Request，链路状态请求）报文、LSU（LinkState Update，链路状态更新）报文和LSAck（LinkState Acknowledgment，链路状态应答）报文。它们各自在OSPF路由更新中所担当的用途不一样，报文格式也存在比较大的差别。</p>
+        <h1 id="OSPF报文类型及其工作原理"><a href="#OSPF报文类型及其工作原理" class="headerlink" title="OSPF报文类型及其工作原理"></a>OSPF报文类型及其工作原理</h1><p>要理解OSPF路由协议的工作原理，特别是路由更新机制，首先就要对它的各种报文格式有一个全面的了解。OSPF报文主要有5种：Hello报文、DD （Database Description，数据库描述）报文、LSR （LinkState Request，链路状态请求）报文、LSU（LinkState Update，链路状态更新）报文和LSAck（LinkState Acknowledgment，链路状态应答）报文。它们各自在OSPF路由更新中所担当的用途不一样，报文格式也存在比较大的差别。</p>
 <h2 id="OSPF报头及各种报文格式"><a href="#OSPF报头及各种报文格式" class="headerlink" title="OSPF报头及各种报文格式"></a>OSPF报头及各种报文格式</h2><p> OSPF报文直接封装为IP协议报文，因为OSPF是专为TCP/IP网络而设计的路由协议。以上所说到的五种OSPF报文使用相同的OSPF报头格式<br><img src="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229666VZo8.jpg" alt=""></p>
 <blockquote>
 <p>OSPF协议报头格式<br>l   Version<br>版本字段，占1个字节，指出所采用的OSPF协议版本号，目前最高版本为OSPF v4，即值为4（对应二进制就是0100）。<br>l   Packet Type<br>报文类型字段，标识对应报文的类型。前面说了OSPF有5种报文，分别是：Hello报文、DD报文、LSR报文、LSU报文、LSAck报文。具体将在下面各小节介绍。<br>l   Packet Length：包长度字段，占2个字节。它是指整个报文（包括OSPF报头部分和后面各报文内容部分）的字节长度。<br>l   Router ID：路由器ID字段，占4个字节，指定发送报文的源路由器ID。<br>l   Area ID：区域ID字段，占4个字节，指定发送报文的路由器所对应的OSPF区域号。<br>l   Checksum：校验和字段，占2个字节，是对整个报文（包括OSPF报头和各报文具体内容，但不包括下面的Authentication字段）的校验和，用于对端路由器校验报文的完整性和正确性。<br>l   AuType：认证类型字段，占2个字节，指定所采用的认证类型，0为不认证，1为进行简单认证，2采用MD5方式认证。<br>Authentication：认证字段，占8个字节，具体值根据不同认证类型而定：认证类型为不认证时，此字段没有数据，认证类型为简单认证时，此字段为认证密码，认证类型为MD5认证时，此字段为MD5摘要消息。</p>
@@ -367,481 +371,59 @@
 <h3 id="OSPF-LSU报文及格式"><a href="#OSPF-LSU报文及格式" class="headerlink" title="OSPF LSU报文及格式"></a>OSPF LSU报文及格式</h3><p>LSU报文是应LSR报文的请求，用来向对端路由器发送所需的LSA，内容是多条LSA完整内容的集合，LSU报文内容部分包括此次共发送的LSA数量和每条LSA的完整内容，如图，报文内容部分的丙个字段如表<br><img src="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229727hM1h.jpg" alt=""><br>LSU报文在支持组播和多路访问的链路上是以组播方式将LSA泛洪出去的，并且对没有收到对方确认应答（就是下面将要介绍的LSAck报文）的LSA进行重传，但重传时的LSA是直接送到没有收到确认应答的邻居路由器上，而不再是泛洪。<br> LSU报文内容部分字段说明<br><img src="http://i.imgur.com/jYzQjvJ.jpg" alt=""></p>
 <h3 id="OSPF-LSAck报文及格式"><a href="#OSPF-LSAck报文及格式" class="headerlink" title="OSPF LSAck报文及格式"></a>OSPF LSAck报文及格式</h3><p>LSAck报文是路由器在收到对端发来的LSU报文后所发出的确认应答报文，内容是需要确认的LSA头部（LSA Headers），整个LSAck报文的格式如图9-14所示。LSAck报文根据不同链路以单播或组播形式发送。<br><img src="http://blog.chinaunix.net/attachment/201307/31/10659021_1375229741UUah.jpg" alt=""></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/27/markdown/" itemprop="url">
-                  Markdown语法介绍以及图床设置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-27T09:09:55+08:00" content="2016-09-27">
-              2016-09-27
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/网络工程/" rel="tag">#网络工程</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="Markdown-语法的简要规则"><a href="#Markdown-语法的简要规则" class="headerlink" title="Markdown 语法的简要规则"></a>Markdown 语法的简要规则</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p><img src="http://o8qzarlkc.bkt.clouddn.com/16-6-17/58568825.jpg" alt=""><br>标题是每篇文章都需要也是最常用的格式，在 Markdown中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/27/markdown/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/27/markdown/" rel="next" title="Markdown语法介绍以及图床设置">
+                <i class="fa fa-chevron-left"></i> Markdown语法介绍以及图床设置
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/26/1/" itemprop="url">
-                  优化Markdown在Notepad++中的使用体验
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-26T20:05:47+08:00" content="2016-09-26">
-              2016-09-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/first/" itemprop="url" rel="index">
-                    <span itemprop="name">first</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>选择一个强大而好用的文本编辑器，是进行Web开发和编程必不可少的一部分，甚至对于通常的写作，一个舒服的文本编辑器也会让你写起文字来觉得优雅而潇洒。Sublime Text是一款不错的编辑器，简洁且跨平台，但对新手来说配置起来有些麻烦，对于通常使用Windows的用户来说，Notepad++或许是一个更好的选择。Notepad++（NPP），顾名思义，就是一个加强版的记事本了，虽然只多了两个加号，但功能甩系统记事本可不是一里两里。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/26/1/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/25/first /" itemprop="url">
-                  first
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-25T18:56:06+08:00" content="2016-09-25">
-              2016-09-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/first/" itemprop="url" rel="index">
-                    <span itemprop="name">first</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Hello World!</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/24/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T23:18:29+08:00" content="2016-09-24">
-              2016-09-24
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -849,6 +431,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -868,8 +454,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -919,6 +514,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OSPF报文类型及其工作原理"><span class="nav-number">1.</span> <span class="nav-text">OSPF报文类型及其工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSPF报头及各种报文格式"><span class="nav-number">1.1.</span> <span class="nav-text">OSPF报头及各种报文格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF-Hello报文及格式"><span class="nav-number">1.1.1.</span> <span class="nav-text">OSPF Hello报文及格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF-DD报文及格式"><span class="nav-number">1.1.2.</span> <span class="nav-text">OSPF DD报文及格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF-LSR报文及格式"><span class="nav-number">1.1.3.</span> <span class="nav-text">OSPF LSR报文及格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF-LSU报文及格式"><span class="nav-number">1.1.4.</span> <span class="nav-text">OSPF LSU报文及格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF-LSAck报文及格式"><span class="nav-number">1.1.5.</span> <span class="nav-text">OSPF LSAck报文及格式</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1015,6 +621,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
