@@ -94,7 +94,7 @@
 址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网">
 <meta property="og:image" content="http://i.imgur.com/wU91lqF.jpg">
 <meta property="og:image" content="http://i.imgur.com/wU91lqF.jpg">
-<meta property="og:updated_time" content="2016-09-30T14:24:26.291Z">
+<meta property="og:updated_time" content="2016-09-30T14:26:44.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一口鸡汤（1）">
 <meta name="twitter:description" content="ARP工作原理什么是ARP
@@ -352,7 +352,7 @@
 <p>址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网络中各个主机互相信任的基础上的，网络上的主机可以自主发送ARP应答消息，其他主机收到应答报文时不会检测该报文的真实性就会将其记入本机ARP缓存；由此攻击者就可以向某一主机发送伪ARP应答报文，使其发送的信息无法到达预期的主机或到达错误的主机，这就构成了一个ARP欺骗。ARP命令可用于查询本机ARP缓存中IP地址和MAC地址的对应关系、添加或删除静态对应关系等。相关协议有RARP、代理ARP。NDP用于在IPv6中代替地址解析协议。<br><a id="more"></a></p>
 </blockquote>
 <h2 id="同网段内ARP工作原理"><a href="#同网段内ARP工作原理" class="headerlink" title="同网段内ARP工作原理"></a>同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
-<p>OSI七层模型如下<br>———- |<br>应用层|<br>表示层|<br>会话层|<br>传输层|<br>网络层|<br>数据链路层|<br>物理层|</p>
+<p>OSI七层模型如下<br>—–|<br>应用层|<br>表示层|<br>会话层|<br>传输层|<br>网络层|<br>数据链路层|<br>物理层|</p>
 <p>若192.168.1.100 需要和192.168.1.102通信 需要从物理层来封装<br>192.168.1.100 发送arp广播包 广播包内容是“我是192.168.1.100 我的mac地址是XXXXXXXXX 请问IP地址是192.168.1.102的mac地址是什么”<br>在同一网段内广播后只有192.168.1.102的主机会回复这个报文回应“192.168.1.102的主机的MAC地址是XXXXXXXXX”<br>这样主机192.168.1.100就知道了192.168.1.102的MAC地址了就可以进行通信了，并且这两个主机同时更新了自己的arp缓存表</p>
 <h2 id="不同网段内ARP工作原理"><a href="#不同网段内ARP工作原理" class="headerlink" title="不同网段内ARP工作原理"></a>不同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
 <p>192.168.1.100若想和192.168.2.100通信（ping）<br>192.168.1.100 发现和192.168.2.100 不同网段，此时查找自己的网关，若没有设置自己的网关，直接丢弃此报文，显示不可达<br>若发现了自己的网关，发送个ARP报文来获取网关的MAC地址源IP是192.168.1.100 目的IP是192.168.1.1 源MAC是XXXXXXXXX目的MAC是广播MAC FFFFFFFFFFFF<br>网关回应ARP包： 源ip网关192.168.1.1 目的IP 192.168.1.100 源MAC 网关MAC XXXXXXXXXXXX 目的macXXXXXXXXXX<br>192.168.1.100得知网关MAC 接着发送ICMP包 源MAC XXXXXXXXXX目的MAC网关MAC XXXXXXXX源IP 192.168.1.100 目的IP 192.168.2.100<br>核心路由器收到ICMP报文后查找路由表 发现2.0网段是从别的端口发出，则转发<br>核心路由器获取目标192.168.2.100的MAC地址 ARP包：源IP 192.168.2.1 目的IP 192.168.2.100 源MAC XXXXXXXXX 目的MAC 广播MACFFFFFFFFFF<br>192.168.2.100发送arp回应，核心路由器获得目标MAC<br>路由器发送ICMP报文源IP 192.168.1.100 源mac为路由器接口MAC 目的IP为192.168.2.100 ，目的macXXXXXXXXX<br>192.168.2.100回应icmp 源ip为192.168.2.100 源mac XXXXXXXX 目的ip 192.168.1.100 目的mac为 路由器接口mac<br>路由器转发icmp报文，源ip 192.168.2.200 源mac 路由器mac 目的ip 192.168.1.100 目的mac 192.168.1.100的mac<br>192.168.1.100收到回应，完成ping命令</p>
