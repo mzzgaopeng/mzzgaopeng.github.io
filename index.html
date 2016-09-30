@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            About
+            Über
           </a>
         </li>
       
@@ -205,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -278,6 +278,133 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/30/9.30总结/" itemprop="url">
+                  一口鸡汤（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T21:42:32+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/zero/" itemprop="url" rel="index">
+                    <span itemprop="name">zero</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/9.30总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/9.30总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ARP工作原理"><a href="#ARP工作原理" class="headerlink" title="ARP工作原理"></a>ARP工作原理</h1><h2 id="什么是ARP"><a href="#什么是ARP" class="headerlink" title="什么是ARP"></a>什么是ARP</h2><blockquote>
+<p>址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网络中各个主机互相信任的基础上的，网络上的主机可以自主发送ARP应答消息，其他主机收到应答报文时不会检测该报文的真实性就会将其记入本机ARP缓存；由此攻击者就可以向某一主机发送伪ARP应答报文，使其发送的信息无法到达预期的主机或到达错误的主机，这就构成了一个ARP欺骗。ARP命令可用于查询本机ARP缓存中IP地址和MAC地址的对应关系、添加或删除静态对应关系等。相关协议有RARP、代理ARP。NDP用于在IPv6中代替地址解析协议。</p>
+</blockquote>
+<h2 id="同网段内ARP工作原理"><a href="#同网段内ARP工作原理" class="headerlink" title="同网段内ARP工作原理"></a>同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
+<p>OSI七层模型如下<br>| ————- |<br>|应用层|<br>|表示层|<br>|会话层|<br>|传输层|<br>|网络层|<br>|数据链路层|<br>|物理层|</p>
+<p>若192.168.1.100 需要和192.168.1.102通信 需要从物理层来封装<br>192.168.1.100 发送arp广播包 广播包内容是“我是192.168.1.100 我的mac地址是XXXXXXXXX 请问IP地址是192.168.1.102的mac地址是什么”<br>在同一网段内广播后只有192.168.1.102的主机会回复这个报文回应“192.168.1.102的主机的MAC地址是XXXXXXXXX”<br>这样主机192.168.1.100就知道了192.168.1.102的MAC地址了就可以进行通信了，并且这两个主机同时更新了自己的arp缓存表</p>
+<h2 id="不同网段内ARP工作原理"><a href="#不同网段内ARP工作原理" class="headerlink" title="不同网段内ARP工作原理"></a>不同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
+<p>192.168.1.100若想和192.168.2.100通信（ping）<br>192.168.1.100 发现和192.168.2.100 不同网段，此时查找自己的网关，若没有设置自己的网关，直接丢弃此报文，显示不可达<br>若发现了自己的网关，发送个ARP报文来获取网关的MAC地址源IP是192.168.1.100 目的IP是192.168.1.1 源MAC是XXXXXXXXX目的MAC是广播MAC FFFFFFFFFFFF<br>网关回应ARP包： 源ip网关192.168.1.1 目的IP 192.168.1.100 源MAC 网关MAC XXXXXXXXXXXX 目的macXXXXXXXXXX<br>192.168.1.100得知网关MAC 接着发送ICMP包 源MAC XXXXXXXXXX目的MAC网关MAC XXXXXXXX源IP 192.168.1.100 目的IP 192.168.2.100<br>核心路由器收到ICMP报文后查找路由表 发现2.0网段是从别的端口发出，则转发<br>核心路由器获取目标192.168.2.100的MAC地址 ARP包：源IP 192.168.2.1 目的IP 192.168.2.100 源MAC XXXXXXXXX 目的MAC 广播MACFFFFFFFFFF<br>192.168.2.100发送arp回应，核心路由器获得目标MAC<br>路由器发送ICMP报文源IP 192.168.1.100 源mac为路由器接口MAC 目的IP为192.168.2.100 ，目的macXXXXXXXXX<br>192.168.2.100回应icmp 源ip为192.168.2.100 源mac XXXXXXXX 目的ip 192.168.1.100 目的mac为 路由器接口mac<br>路由器转发icmp报文，源ip 192.168.2.200 源mac 路由器mac 目的ip 192.168.1.100 目的mac 192.168.1.100的mac<br>192.168.1.100收到回应，完成ping命令</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/28/ospf面试/" itemprop="url">
                   OSPF常见面试题
                 </a>
@@ -291,7 +418,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-28T07:49:41+08:00" content="2016-09-28">
               2016-09-28
             </time>
@@ -303,7 +430,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/网络工程/" itemprop="url" rel="index">
@@ -351,7 +478,7 @@
 <h3 id="2-OSPF中承载完整的链路状态的包？"><a href="#2-OSPF中承载完整的链路状态的包？" class="headerlink" title="2. OSPF中承载完整的链路状态的包？"></a>2. OSPF中承载完整的链路状态的包？</h3><p>LSU
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/28/ospf面试/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
         
@@ -414,7 +541,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-27T18:41:53+08:00" content="2016-09-27">
               2016-09-27
             </time>
@@ -426,7 +553,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/markdown/" itemprop="url" rel="index">
@@ -545,7 +672,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-27T12:07:00+08:00" content="2016-09-27">
               2016-09-27
             </time>
@@ -557,7 +684,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/markdown/" itemprop="url" rel="index">
@@ -604,7 +731,7 @@
           <h1 id="OSPF报文类型及其工作原理"><a href="#OSPF报文类型及其工作原理" class="headerlink" title="OSPF报文类型及其工作原理"></a>OSPF报文类型及其工作原理</h1><p>要理解OSPF路由协议的工作原理，特别是路由更新机制，首先就要对它的各种报文格式有一个全面的了解。OSPF报文主要有5种：Hello报文、DD （Database Description，数据库描述）报文、LSR （LinkState Request，链路状态请求）报文、LSU（LinkState Update，链路状态更新）报文和LSAck（LinkState Acknowledgment，链路状态应答）报文。它们各自在OSPF路由更新中所担当的用途不一样，报文格式也存在比较大的差别。
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/27/ospf/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
         
@@ -667,7 +794,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-27T09:09:55+08:00" content="2016-09-27">
               2016-09-27
             </time>
@@ -679,7 +806,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/markdown/" itemprop="url" rel="index">
@@ -726,7 +853,7 @@
           <h1 id="Markdown-语法的简要规则"><a href="#Markdown-语法的简要规则" class="headerlink" title="Markdown 语法的简要规则"></a>Markdown 语法的简要规则</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p><img src="http://o8qzarlkc.bkt.clouddn.com/16-6-17/58568825.jpg" alt=""><br>标题是每篇文章都需要也是最常用的格式，在 Markdown中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/27/markdown/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
         
@@ -789,7 +916,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-26T20:05:47+08:00" content="2016-09-26">
               2016-09-26
             </time>
@@ -801,7 +928,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/first/" itemprop="url" rel="index">
@@ -848,7 +975,7 @@
           <p>选择一个强大而好用的文本编辑器，是进行Web开发和编程必不可少的一部分，甚至对于通常的写作，一个舒服的文本编辑器也会让你写起文字来觉得优雅而潇洒。Sublime Text是一款不错的编辑器，简洁且跨平台，但对新手来说配置起来有些麻烦，对于通常使用Windows的用户来说，Notepad++或许是一个更好的选择。Notepad++（NPP），顾名思义，就是一个加强版的记事本了，虽然只多了两个加号，但功能甩系统记事本可不是一里两里。
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/26/1/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
         
@@ -911,7 +1038,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-25T18:56:06+08:00" content="2016-09-25">
               2016-09-25
             </time>
@@ -923,7 +1050,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/first/" itemprop="url" rel="index">
@@ -1031,7 +1158,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-24T23:18:29+08:00" content="2016-09-24">
               2016-09-24
             </time>
@@ -1147,16 +1274,16 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
               </a>
             </div>
           
@@ -1164,8 +1291,8 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1234,7 +1361,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
