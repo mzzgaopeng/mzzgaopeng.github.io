@@ -1,0 +1,715 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="zero," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Linux基础命令操作find命令
+find命令所查找的目录路径。 .来表示当前目录，用/来表示系统根目录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一口鸡汤（2）">
+<meta property="og:url" content="http://lionspace.cn/2016/09/30/9.30总结2/index.html">
+<meta property="og:site_name" content="lion">
+<meta property="og:description" content="Linux基础命令操作find命令
+find命令所查找的目录路径。 .来表示当前目录，用/来表示系统根目录。">
+<meta property="og:updated_time" content="2016-10-01T13:52:49.115Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一口鸡汤（2）">
+<meta name="twitter:description" content="Linux基础命令操作find命令
+find命令所查找的目录路径。 .来表示当前目录，用/来表示系统根目录。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://lionspace.cn/2016/09/30/9.30总结2/"/>
+
+  <title> 一口鸡汤（2） | lion </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lion</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">lionspace</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Accueil
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            A propos
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-board">
+          <a href="/board" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                一口鸡汤（2）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T22:33:07+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/zero/" itemprop="url" rel="index">
+                    <span itemprop="name">zero</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/9.30总结2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/9.30总结2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux基础命令操作"><a href="#Linux基础命令操作" class="headerlink" title="Linux基础命令操作"></a>Linux基础命令操作</h1><h2 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h2><blockquote>
+<p>find命令所查找的目录路径。 .来表示当前目录，用/来表示系统根目录。</p>
+</blockquote>
+<a id="more"></a>
+<p>-name   filename             #查找名为filename的文件<br>-perm                        #按执行权限来查找<br>-user    username             #按文件属主来查找<br>-group groupname            #按组来查找<br>-mtime   -n +n                #按文件更改时间来查找文件，-n指n天以内，+n指n天以前<br>-atime    -n +n               #按文件访问时间来查GIN: 0px”&gt;</p>
+<p>-ctime    -n +n              #按文件创建时间来查找文件，-n指n天以内，+n指n天以前</p>
+<p>-nogroup                     #查无有效属组的文件，即文件的属组在/etc/groups中不存在<br>-nouser                     #查无有效属主的文件，即文件的属主在/etc/passwd中不存<br>-newer   f1 !f2              找文件，-n指n天以内，+n指n天以前<br>-ctime    -n +n               #按文件创建时间来查找文件，-n指n天以内，+n指n天以前<br>-nogroup                     #查无有效属组的文件，即文件的属组在/etc/groups中不存在<br>-nouser                      #查无有效属主的文件，即文件的属主在/etc/passwd中不存<br>-newer   f1 !f2               #查更改时间比f1新但比f2旧的文件<br>-type    b/d/c/p/l/f         #查是块设备、目录、字符设备、管道、符号链接、普通文件<br>-size      n[c]               #查长度为n块[或n字节]的文件<br>-depth                       #使查找在进入子目录前先行查找完本目录<br>-fstype                     #查更改时间比f1新但比f2旧的文件<br>-type    b/d/c/p/l/f         #查是块设备、目录、字符设备、管道、符号链接、普通文件<br>-size      n[c]               #查长度为n块[或n字节]的文件<br>-depth                       #使查找在进入子目录前先行查找完本目录<br>-fstype                      #查位于某一类型文件系统中的文件，这些文件系统类型通常可 在/etc/fstab中找到<br>-mount                       #查文件时不跨越文件系统mount点<br>-follow                      #如果遇到符号链接文件，就跟踪链接所指的文件<br>-cpio                %;      #查位于某一类型文件系统中的文件，这些文件系统类型通常可 在/etc/fstab中找到<br>-mount                       #查文件时不跨越文件系统mount点<br>-follow                      #如果遇到符号链接文件，就跟踪链接所指的文件<br>-cpio                        #对匹配的文件使用cpio命令，将他们备份到磁带设备中<br>-prune                       #忽略某个目录</p>
+<hr>
+<p>$find   ~   -name   “<em>.txt”   -print    #在$HOME中查.txt文件并显示<br>$find   .    -name   “</em>.txt”   -print<br>$find   .    -name   “[A-Z]<em>“   -print   #查以大写字母开头的文件<br>$find   /etc   -name   “host</em>“   -print #查以host开头的文件<br>$find   .   -name   “[a-z][a-z][0–9][0–9].txt”    -print   #查以两个小写字母和两个数字开头的txt文件<br>$find .   -perm   755   -print<br>$find   .   -perm -007   -exec ls -l {} \;   #查所有用户都可读写执行的文件同-perm 777<br>$find   . -type d   -print<br>$find   .   !   -type   d   -print<br>$find   .   -type l   -print</p>
+<p>$find   .   -size   +1000000c   -print        #查长度大于1Mb的文件<br>$find   .   -size   100c         -print       # 查长度为100c的文件<br>$find   .   -size   +10   -print              #查长度超过期作废10块的文件（1块=512字节）</p>
+<p>$cd /<br>$find   etc   home   apps    -depth   -print   | cpio   -ivcdC65536   -o   /dev/rmt0<br>$find   /etc -name “passwd<em>“   -exec grep   “cnscn”   {}   \;   #看是否存在cnscn用户<br>$find . -name “yao</em>“   | xargs file<br>$find   . -name “yao<em>“   |   xargs   echo    “” &gt; /tmp/core.log<br>$find   . -name “yao</em>“   | xargs   chmod   o-w</p>
+<hr>
+<p>find   -name april<em>                     在当前目录下查找以april开始的文件<br>find   -name   april</em>   fprint file        在当前目录下查找以april开始的文件，并把结果输出到file中<br>find   -name ap<em> -o -name may</em>   查找以ap或may开头的文件<br>find   /mnt   -name tom.txt   -ftype vfat   在/mnt下查找名称为tom.txt且文件系统类型为vfat的文件<br>find   /mnt   -name t.txt ! -ftype vfat   在/mnt下查找名称为tom.txt且文件系统类型不为vfat的文件<br>find   /tmp   -name wa* -type l            在/tmp下查找名为wa开头且类型为符号链接的文件<br>find   /home   -mtime   -2                 在/home下查最近两天内改动过的文件<br>find /home    -atime -1                  查1天之内被存取过的文件<br>find /home -mmin    +60                  在/home下查60分钟前改动过的文件<br>find /home   -amin   +30                  查最近30分钟前被存取过的文件<br>find /home   -newer   tmp.txt             在/home下查更新时间比tmp.txt近的文件或目录<br>find /home   -anewer   tmp.txt            在/home下查存取时间比tmp.txt近的文件或目录<br>find   /home   -used   -2                  列出文件或目录被改动过之后，在2日内被存取过的文件或目录<br>find   /home   -user cnscn                列出/home目录内属于用户cnscn的文件或目录<br>find   /home   -uid   +501                  列出/home目录内用户的识别码大于501的文件或目录<br>find   /home   -group   cnscn              列出/home内组为cnscn的文件或目录<br>find   /home   -gid 501                   列出/home内组id为501的文件或目录<br>find   /home   -nouser                    列出/home内不属于本地用户的文件或目录<br>find   /home   -nogroup                   列出/home内不属于本地组的文件或目录<br>find   /home    -name tmp.txt    -maxdepth   4   列出/home内的tmp.txt 查时深度最多为3层<br>find   /home   -name tmp.txt   -mindepth   3   从第2层开始查<br>find   /home   -empty                     查找大小为0的文件或空目录<br>find   /home   -size   +512k                查大于512k的文件<br>find   /home   -size   -512k               查小于512k的文件<br>find   /home   -links   +2                查硬连接数大于2的文件或目录<br>find   /home   -perm   0700                查权限为700的文件或目录<br>find   /tmp   -name tmp.txt   -exec cat {} \;<br>find   /tmp   -name   tmp.txt   -ok   rm {} \;</p>
+<p>find    /   -amin    -10     # 查找在系统中最后10分钟访问的文件<br>find    /   -atime   -2        # 查找在系统中最后48小时访问的文件<br>find    /   -empty             # 查找在系统中为空的文件或者文件夹<br>find    /   -group   cat        # 查找在系统中属于 groupcat的文件<br>find    /   -mmin   -5         # 查找在系统中最后5分钟里修改过的文件<br>find    /   -mtime   -1       #查找在系统中最后24小时里修改过的文件<br>find    /   -nouser           #查找在系统中属于作废用户的文件<br>find    /   -user    fred     #查找在系统中属于FRED这个用户的文件</p>
+<p>查当前目录下的所有普通文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># find . -type f -exec ls -l &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>-rw-r–r–    1 root      root         34928 2003-02-25   ./conf/httpd.conf<br>-rw-r–r–    1 root      root         12959 2003-02-25   ./conf/magic<br>-rw-r–r–    1 root      root          180 2003-02-25   ./conf.d/README<br>查当前目录下的所有普通文件，并在- e x e c选项中使用ls -l命令将它们列出 </p>
+<hr>
+<p>在/logs目录中查找更改时间在5日以前的文件并删除它们：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ find logs -type f -mtime +5 -exec   -ok   rm &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>查询当天修改过的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@book class]# find   ./   -mtime   -1   -type f   -exec   ls -l   &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>查询文件并询问是否要显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@book class]# find   ./   -mtime   -1   -type f   -ok   ls -l   &#123;&#125; \;  </div><div class="line">&lt; ls … ./classDB.inc.php &gt; ? y</div></pre></td></tr></table></figure></p>
+<p>-rw-r–r–    1 cnscn    cnscn       13709   1月 12 12:22 ./classDB.inc.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@book class]# find   ./   -mtime   -1   -type f   -ok   ls -l   &#123;&#125; \;  </div><div class="line">&lt; ls … ./classDB.inc.php &gt; ? n</div></pre></td></tr></table></figure></p>
+<p>[root@book class]#</p>
+<hr>
+<p>将find出来的东西拷到另一个地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find *.c -exec cp 	&apos;&#123;&#125;&apos; /emp &apos;;&apos;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>###实例</p>
+<hr>
+<p>要在/usr/linux中查找所有的<em>.h，并在这些文件中查找“SYSCALL_VECTOR”，最后打印出所有包含”SYSCALL_VECTOR”的文件名，有以下几种方法实现<br>find /usr/linux -name “</em>.h” | xargs -n50 grep SYSCALL_VECTOR<br>grep SYSCALL_VECTOR /usr/linux/<em>.h | cut -d’:’ -f1 | uniq &gt; filename<br>find /usr/linux -name “</em>.h” -exec grep “SYSCALL_VECTOR” {} \; -print</p>
+<p>　　我用find / -name filename| rm -rf，不成功，请问为什么不成功？<br>find / -name filename -exec rm -rf {} \;<br>find . -name filename |rm -rf试一下{} 表示你找出来的结果。<br>\; 则相当于“宪法”，没什么说头，就是这么规定的，在 -exec 后面需要一个表示该命令终结的的符号。可以在 man find 中找到答案。<br>要让rm识别find的结果，如下：<br>find / -name filename |xargs rm -rf<br>之所以find . -name filename |rm -rf不通过，<font size="4">是因为rm命令不接受从标准输入传过来的指令</font></p>
+<hr>
+<h4 id="查找含特定字符串的文件"><a href="#查找含特定字符串的文件" class="headerlink" title="查找含特定字符串的文件"></a>查找含特定字符串的文件</h4><p><big>例如查找当前目录下含有”the string you want find…”字符串的文件：<big><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$find . -type f -exec grep “the string you want find…” &#123;&#125; ; -print</div></pre></td></tr></table></figure></big></big></p>
+<hr>
+<p>从根目录开始查tmpfile，一旦查到马上删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name &quot;tmpfile&quot; -exec rm &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/zero/" rel="tag">#zero</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/30/9.30总结/" rel="next" title="一口鸡汤（1）">
+                <i class="fa fa-chevron-left"></i> 一口鸡汤（1）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/30/9.30总结2/"
+           data-title="一口鸡汤（2）" data-url="http://lionspace.cn/2016/09/30/9.30总结2/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Des Matières
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Ensemble
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/timg.jpg"
+               alt="lion" />
+          <p class="site-author-name" itemprop="name">lion</p>
+          <p class="site-description motion-element" itemprop="description">lion</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">articles</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5018136169" target="_blank" title="新浪微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  新浪微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://avroom.cn" title="友情链接" target="_blank">友情链接</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux基础命令操作"><span class="nav-number">1.</span> <span class="nav-text">Linux基础命令操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#find命令"><span class="nav-number">1.1.</span> <span class="nav-text">find命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找含特定字符串的文件"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">查找含特定字符串的文件</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lion</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Thème -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lionspace"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
