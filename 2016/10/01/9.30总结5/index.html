@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="ARP工作原理什么是ARP
-址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网">
+<meta name="description" content="linux命令—catcat命令的用途是连接文件或标准输入并打印。这个命令常用来显示文件内容，或者将几个文件连接起来显示，或者从标准输入读取内容并显示，它常与重定向符号配合使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一口鸡汤（1）">
-<meta property="og:url" content="http://lionspace.cn/2016/09/30/9.30总结/index.html">
+<meta property="og:title" content="一口鸡汤（5）">
+<meta property="og:url" content="http://lionspace.cn/2016/10/01/9.30总结5/index.html">
 <meta property="og:site_name" content="lion">
-<meta property="og:description" content="ARP工作原理什么是ARP
-址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网">
-<meta property="og:image" content="http://i.imgur.com/wU91lqF.jpg">
-<meta property="og:image" content="http://i.imgur.com/wU91lqF.jpg">
-<meta property="og:updated_time" content="2016-09-30T14:31:00.310Z">
+<meta property="og:description" content="linux命令—catcat命令的用途是连接文件或标准输入并打印。这个命令常用来显示文件内容，或者将几个文件连接起来显示，或者从标准输入读取内容并显示，它常与重定向符号配合使用。">
+<meta property="og:updated_time" content="2016-10-01T14:40:04.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一口鸡汤（1）">
-<meta name="twitter:description" content="ARP工作原理什么是ARP
-址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网">
-<meta name="twitter:image" content="http://i.imgur.com/wU91lqF.jpg">
+<meta name="twitter:title" content="一口鸡汤（5）">
+<meta name="twitter:description" content="linux命令—catcat命令的用途是连接文件或标准输入并打印。这个命令常用来显示文件内容，或者将几个文件连接起来显示，或者从标准输入读取内容并显示，它常与重定向符号配合使用。">
 
 
 
@@ -120,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://lionspace.cn/2016/09/30/9.30总结/"/>
+  <link rel="canonical" href="http://lionspace.cn/2016/10/01/9.30总结5/"/>
 
-  <title> 一口鸡汤（1） | lion </title>
+  <title> 一口鸡汤（5） | lion </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -282,7 +276,7 @@
             
             
               
-                一口鸡汤（1）
+                一口鸡汤（5）
               
             
           </h1>
@@ -294,8 +288,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T21:42:32+08:00" content="2016-09-30">
-              2016-09-30
+            <time itemprop="dateCreated" datetime="2016-10-01T22:39:43+08:00" content="2016-10-01">
+              2016-10-01
             </time>
           </span>
 
@@ -324,8 +318,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/30/9.30总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/9.30总结/" itemprop="commentsCount"></span>
+                <a href="/2016/10/01/9.30总结5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/01/9.30总结5/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -348,47 +342,182 @@
       
 
       
-        <h1 id="ARP工作原理"><a href="#ARP工作原理" class="headerlink" title="ARP工作原理"></a>ARP工作原理</h1><h2 id="什么是ARP"><a href="#什么是ARP" class="headerlink" title="什么是ARP"></a>什么是ARP</h2><blockquote>
-<p>址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网络中各个主机互相信任的基础上的，网络上的主机可以自主发送ARP应答消息，其他主机收到应答报文时不会检测该报文的真实性就会将其记入本机ARP缓存；由此攻击者就可以向某一主机发送伪ARP应答报文，使其发送的信息无法到达预期的主机或到达错误的主机，这就构成了一个ARP欺骗。ARP命令可用于查询本机ARP缓存中IP地址和MAC地址的对应关系、添加或删除静态对应关系等。相关协议有RARP、代理ARP。NDP用于在IPv6中代替地址解析协议。<br><a id="more"></a></p>
-</blockquote>
-<h2 id="同网段内ARP工作原理"><a href="#同网段内ARP工作原理" class="headerlink" title="同网段内ARP工作原理"></a>同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
-<p>OSI七层模型如下 </p>
-<table>
-<thead>
-<tr>
-<th>应用层</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>表示层</td>
-<td></td>
-</tr>
-<tr>
-<td>会话层</td>
-<td></td>
-</tr>
-<tr>
-<td>传输层</td>
-<td></td>
-</tr>
-<tr>
-<td>网络层</td>
-<td></td>
-</tr>
-<tr>
-<td>数据链路层</td>
-<td></td>
-</tr>
-<tr>
-<td>物理层</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>若192.168.1.100 需要和192.168.1.102通信 需要从物理层来封装<br>192.168.1.100 发送arp广播包 广播包内容是“我是192.168.1.100 我的mac地址是XXXXXXXXX 请问IP地址是192.168.1.102的mac地址是什么”<br>在同一网段内广播后只有192.168.1.102的主机会回复这个报文回应“192.168.1.102的主机的MAC地址是XXXXXXXXX”<br>这样主机192.168.1.100就知道了192.168.1.102的MAC地址了就可以进行通信了，并且这两个主机同时更新了自己的arp缓存表</p>
-<h2 id="不同网段内ARP工作原理"><a href="#不同网段内ARP工作原理" class="headerlink" title="不同网段内ARP工作原理"></a>不同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
-<p>192.168.1.100若想和192.168.2.100通信（ping）<br>192.168.1.100 发现和192.168.2.100 不同网段，此时查找自己的网关，若没有设置自己的网关，直接丢弃此报文，显示不可达<br>若发现了自己的网关，发送个ARP报文来获取网关的MAC地址源IP是192.168.1.100 目的IP是192.168.1.1 源MAC是XXXXXXXXX目的MAC是广播MAC FFFFFFFFFFFF<br>网关回应ARP包： 源ip网关192.168.1.1 目的IP 192.168.1.100 源MAC 网关MAC XXXXXXXXXXXX 目的macXXXXXXXXXX<br>192.168.1.100得知网关MAC 接着发送ICMP包 源MAC XXXXXXXXXX目的MAC网关MAC XXXXXXXX源IP 192.168.1.100 目的IP 192.168.2.100<br>核心路由器收到ICMP报文后查找路由表 发现2.0网段是从别的端口发出，则转发<br>核心路由器获取目标192.168.2.100的MAC地址 ARP包：源IP 192.168.2.1 目的IP 192.168.2.100 源MAC XXXXXXXXX 目的MAC 广播MACFFFFFFFFFF<br>192.168.2.100发送arp回应，核心路由器获得目标MAC<br>路由器发送ICMP报文源IP 192.168.1.100 源mac为路由器接口MAC 目的IP为192.168.2.100 ，目的macXXXXXXXXX<br>192.168.2.100回应icmp 源ip为192.168.2.100 源mac XXXXXXXX 目的ip 192.168.1.100 目的mac为 路由器接口mac<br>路由器转发icmp报文，源ip 192.168.2.200 源mac 路由器mac 目的ip 192.168.1.100 目的mac 192.168.1.100的mac<br>192.168.1.100收到回应，完成ping命令</p>
+        <h1 id="linux命令—cat"><a href="#linux命令—cat" class="headerlink" title="linux命令—cat"></a>linux命令—cat</h1><p><big><br>cat命令的用途是连接文件或标准输入并打印。这个命令常用来显示文件内容，或者将几个文件连接起来显示，或者从标准输入读取内容并显示，它常与重定向符号配合使用。 <big><a id="more"></a></big></big></p>
+<p>1．命令格式：</p>
+<p>cat [选项] [文件]…</p>
+<p>2．命令功能：</p>
+<p>cat主要有三大功能：</p>
+<p>1.一次显示整个文件:cat filename</p>
+<p>2.从键盘创建一个文件:cat &gt; filename 只能创建新文件,不能编辑已有文件.</p>
+<p>3.将几个文件合并为一个文件:cat file1 file2 &gt; file</p>
+<p>3．命令参数：</p>
+<pre><code>-A, --show-all           等价于 -vET
+
+-b, --number-nonblank    对非空输出行编号
+
+-e                       等价于 -vE
+
+-E, --show-ends          在每行结束处显示 $
+
+-n, --number     对输出的所有行编号,由1开始对所有输出的行数编号
+
+-s, --squeeze-blank  有连续两行以上的空白行，就代换为一行的空白行 
+
+-t                       与 -vT 等价
+
+-T, --show-tabs          将跳格字符显示为 ^I
+
+-u                       (被忽略)
+
+-v, --show-nonprinting   使用 ^ 和 M- 引用，除了 LFD 和 TAB 之外
+</code></pre><p>4．使用实例：</p>
+<p>实例一：把 log2012.log 的文件内容加上行号后输入 log2013.log 这个文件里</p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat -n log2012.log log2013.log</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# cat log2012.log 
+
+2012-01
+
+2012-02
+
+
+
+======[root@localhost test]# cat log2013.log 
+
+2013-01
+
+2013-02
+
+
+
+2013-03
+
+======[root@localhost test]# cat -n log2012.log log2013.log 
+
+         1  2012-01
+
+         2  2012-02
+
+         3
+
+         4
+
+         5  ======
+
+         6  2013-01
+
+         7  2013-02
+
+         8
+
+         9
+
+            10  2013-03
+
+            11  ======[root@localhost test]#
+</code></pre><p>实例二：把 log2012.log 和 log2013.log 的文件内容加上行号（空白行不加）之后将内容附加到 log.log 里。 </p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat -b log2012.log log2013.log log.log</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# cat -b log2012.log log2013.log log.log
+
+     1  2012-01
+
+     2  2012-02
+
+
+
+     3  ======
+
+     4  2013-01
+
+     5  2013-02
+
+
+
+     6  2013-03
+
+     7  ======[root@localhost test]#
+</code></pre><p>实例二：把 log2012.log 和 log2013.log 的文件内容加上行号（空白行不加）之后将内容附加到 log.log 里。<br>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat -b log2012.log log2013.log log.log</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# cat -b log2012.log log2013.log log.log
+
+ 1  2012-01
+
+ 2  2012-02
+
+
+
+ 3  ======
+
+ 4  2013-01
+
+ 5  2013-02
+
+
+
+ 6  2013-03
+
+ 7  ======[root@localhost test]#
+</code></pre><p>实例三：把 log2012.log 的文件内容加上行号后输入 log.log 这个文件里 </p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# cat log.log 
+
+[root@localhost test]# cat -n log2012.log &gt; log.log
+
+[root@localhost test]# cat -n log.log 
+
+ 1  2012-01
+
+ 2  2012-02
+
+ 3
+
+ 4
+
+ 5  ======
+
+[root@localhost test]#
+</code></pre><p>实例四：使用here doc来生成文件<br>输出：<br>    [root@localhost test]# cat &gt;log.txt &lt;&lt;EOF</p>
+<pre><code>&gt; Hello
+
+&gt; World
+
+&gt; Linux
+
+&gt; PWD=$(pwd)
+
+&gt; EOF
+
+[root@localhost test]# ls -l log.txt 
+
+-rw-r--r-- 1 root root 37 10-28 17:07 log.txt
+
+[root@localhost test]# cat log.txt 
+
+Hello
+
+World
+
+Linux
+
+PWD=/opt/soft/test
+
+[root@localhost test]#
+</code></pre><p>备注：</p>
+<p>tac (反向列示)</p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tac log.txt</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# tac log.txt 
+
+PWD=/opt/soft/test
+
+Linux
+
+World
+
+Hello
+</code></pre><p>说明：</p>
+<p>tac 是将 cat 反写过来，所以他的功能就跟 cat 相反， cat 是由第一行到最后一行连续显示在萤幕上，而 tac 则是由最后一行到第一行反向在萤幕上显示出来！</p>
 
       
     </div>
@@ -420,16 +549,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/28/ospf面试/" rel="next" title="OSPF常见面试题">
-                <i class="fa fa-chevron-left"></i> OSPF常见面试题
+              <a href="/2016/10/01/9.30总结4/" rel="next" title="一口鸡汤（4）">
+                <i class="fa fa-chevron-left"></i> 一口鸡汤（4）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/30/9.30总结2/" rel="prev" title="一口鸡汤（2）">
-                一口鸡汤（2） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/01/9.30总结6/" rel="prev" title="一口鸡汤（6）">
+                一口鸡汤（6） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -456,8 +585,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/30/9.30总结/"
-           data-title="一口鸡汤（1）" data-url="http://lionspace.cn/2016/09/30/9.30总结/">
+      <div class="ds-thread" data-thread-key="2016/10/01/9.30总结5/"
+           data-title="一口鸡汤（5）" data-url="http://lionspace.cn/2016/10/01/9.30总结5/">
       </div>
     
   </div>
@@ -573,7 +702,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP工作原理"><span class="nav-number">1.</span> <span class="nav-text">ARP工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是ARP"><span class="nav-number">1.1.</span> <span class="nav-text">什么是ARP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同网段内ARP工作原理"><span class="nav-number">1.2.</span> <span class="nav-text">同网段内ARP工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段内ARP工作原理"><span class="nav-number">1.3.</span> <span class="nav-text">不同网段内ARP工作原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux命令—cat"><span class="nav-number">1.</span> <span class="nav-text">linux命令—cat</span></a></li></ol></div>
             
           </div>
         </section>

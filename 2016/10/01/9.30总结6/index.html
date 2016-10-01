@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="ARP工作原理什么是ARP
-址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网">
+<meta name="description" content="linux命令—-find命令之execfind是我们很常用的一个Linux命令，但是我们一般查找出来的并不仅仅是看看而已，还会有进一步的操作，这个时候exec的作用就显现出来了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一口鸡汤（1）">
-<meta property="og:url" content="http://lionspace.cn/2016/09/30/9.30总结/index.html">
+<meta property="og:title" content="一口鸡汤（6）">
+<meta property="og:url" content="http://lionspace.cn/2016/10/01/9.30总结6/index.html">
 <meta property="og:site_name" content="lion">
-<meta property="og:description" content="ARP工作原理什么是ARP
-址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网">
-<meta property="og:image" content="http://i.imgur.com/wU91lqF.jpg">
-<meta property="og:image" content="http://i.imgur.com/wU91lqF.jpg">
-<meta property="og:updated_time" content="2016-09-30T14:31:00.310Z">
+<meta property="og:description" content="linux命令—-find命令之execfind是我们很常用的一个Linux命令，但是我们一般查找出来的并不仅仅是看看而已，还会有进一步的操作，这个时候exec的作用就显现出来了。">
+<meta property="og:updated_time" content="2016-10-01T14:44:30.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一口鸡汤（1）">
-<meta name="twitter:description" content="ARP工作原理什么是ARP
-址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网">
-<meta name="twitter:image" content="http://i.imgur.com/wU91lqF.jpg">
+<meta name="twitter:title" content="一口鸡汤（6）">
+<meta name="twitter:description" content="linux命令—-find命令之execfind是我们很常用的一个Linux命令，但是我们一般查找出来的并不仅仅是看看而已，还会有进一步的操作，这个时候exec的作用就显现出来了。">
 
 
 
@@ -120,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://lionspace.cn/2016/09/30/9.30总结/"/>
+  <link rel="canonical" href="http://lionspace.cn/2016/10/01/9.30总结6/"/>
 
-  <title> 一口鸡汤（1） | lion </title>
+  <title> 一口鸡汤（6） | lion </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -282,7 +276,7 @@
             
             
               
-                一口鸡汤（1）
+                一口鸡汤（6）
               
             
           </h1>
@@ -294,8 +288,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T21:42:32+08:00" content="2016-09-30">
-              2016-09-30
+            <time itemprop="dateCreated" datetime="2016-10-01T22:43:39+08:00" content="2016-10-01">
+              2016-10-01
             </time>
           </span>
 
@@ -324,8 +318,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/30/9.30总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/9.30总结/" itemprop="commentsCount"></span>
+                <a href="/2016/10/01/9.30总结6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/01/9.30总结6/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -348,48 +342,226 @@
       
 
       
-        <h1 id="ARP工作原理"><a href="#ARP工作原理" class="headerlink" title="ARP工作原理"></a>ARP工作原理</h1><h2 id="什么是ARP"><a href="#什么是ARP" class="headerlink" title="什么是ARP"></a>什么是ARP</h2><blockquote>
-<p>址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。地址解析协议是建立在网络中各个主机互相信任的基础上的，网络上的主机可以自主发送ARP应答消息，其他主机收到应答报文时不会检测该报文的真实性就会将其记入本机ARP缓存；由此攻击者就可以向某一主机发送伪ARP应答报文，使其发送的信息无法到达预期的主机或到达错误的主机，这就构成了一个ARP欺骗。ARP命令可用于查询本机ARP缓存中IP地址和MAC地址的对应关系、添加或删除静态对应关系等。相关协议有RARP、代理ARP。NDP用于在IPv6中代替地址解析协议。<br><a id="more"></a></p>
-</blockquote>
-<h2 id="同网段内ARP工作原理"><a href="#同网段内ARP工作原理" class="headerlink" title="同网段内ARP工作原理"></a>同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
-<p>OSI七层模型如下 </p>
-<table>
-<thead>
-<tr>
-<th>应用层</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>表示层</td>
-<td></td>
-</tr>
-<tr>
-<td>会话层</td>
-<td></td>
-</tr>
-<tr>
-<td>传输层</td>
-<td></td>
-</tr>
-<tr>
-<td>网络层</td>
-<td></td>
-</tr>
-<tr>
-<td>数据链路层</td>
-<td></td>
-</tr>
-<tr>
-<td>物理层</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>若192.168.1.100 需要和192.168.1.102通信 需要从物理层来封装<br>192.168.1.100 发送arp广播包 广播包内容是“我是192.168.1.100 我的mac地址是XXXXXXXXX 请问IP地址是192.168.1.102的mac地址是什么”<br>在同一网段内广播后只有192.168.1.102的主机会回复这个报文回应“192.168.1.102的主机的MAC地址是XXXXXXXXX”<br>这样主机192.168.1.100就知道了192.168.1.102的MAC地址了就可以进行通信了，并且这两个主机同时更新了自己的arp缓存表</p>
-<h2 id="不同网段内ARP工作原理"><a href="#不同网段内ARP工作原理" class="headerlink" title="不同网段内ARP工作原理"></a>不同网段内ARP工作原理</h2><p>拓扑图如下<br><img src="http://i.imgur.com/wU91lqF.jpg" alt=""></p>
-<p>192.168.1.100若想和192.168.2.100通信（ping）<br>192.168.1.100 发现和192.168.2.100 不同网段，此时查找自己的网关，若没有设置自己的网关，直接丢弃此报文，显示不可达<br>若发现了自己的网关，发送个ARP报文来获取网关的MAC地址源IP是192.168.1.100 目的IP是192.168.1.1 源MAC是XXXXXXXXX目的MAC是广播MAC FFFFFFFFFFFF<br>网关回应ARP包： 源ip网关192.168.1.1 目的IP 192.168.1.100 源MAC 网关MAC XXXXXXXXXXXX 目的macXXXXXXXXXX<br>192.168.1.100得知网关MAC 接着发送ICMP包 源MAC XXXXXXXXXX目的MAC网关MAC XXXXXXXX源IP 192.168.1.100 目的IP 192.168.2.100<br>核心路由器收到ICMP报文后查找路由表 发现2.0网段是从别的端口发出，则转发<br>核心路由器获取目标192.168.2.100的MAC地址 ARP包：源IP 192.168.2.1 目的IP 192.168.2.100 源MAC XXXXXXXXX 目的MAC 广播MACFFFFFFFFFF<br>192.168.2.100发送arp回应，核心路由器获得目标MAC<br>路由器发送ICMP报文源IP 192.168.1.100 源mac为路由器接口MAC 目的IP为192.168.2.100 ，目的macXXXXXXXXX<br>192.168.2.100回应icmp 源ip为192.168.2.100 源mac XXXXXXXX 目的ip 192.168.1.100 目的mac为 路由器接口mac<br>路由器转发icmp报文，源ip 192.168.2.200 源mac 路由器mac 目的ip 192.168.1.100 目的mac 192.168.1.100的mac<br>192.168.1.100收到回应，完成ping命令</p>
+        <h1 id="linux命令—-find命令之exec"><a href="#linux命令—-find命令之exec" class="headerlink" title="linux命令—-find命令之exec"></a>linux命令—-find命令之exec</h1><p>find是我们很常用的一个Linux命令，但是我们一般查找出来的并不仅仅是看看而已，还会有进一步的操作，这个时候exec的作用就显现出来了。 <a id="more"></a></p>
+<p>exec解释：</p>
+<p>-exec  参数后面跟的是command命令，它的终止是以;为结束标志的，所以这句命令后面的分号是不可缺少的，考虑到各个系统中分号会有不同的意义，所以前面加反斜杠。</p>
+<p>{}   花括号代表前面find查找出来的文件名。</p>
+<p>使用find时，只要把想要的操作写在一个文件里，就可以用exec来配合find查找，很方便的。在有些操作系统中只允许-exec选项执行诸如l s或ls -l这样的命令。大多数用户使用这一选项是为了查找旧文件并删除它们。建议在真正执行rm命令删除文件之前，最好先用ls命令看一下，确认它们是所要删除的文件。 exec选项后面跟随着所要执行的命令或脚本，然后是一对儿{ }，一个空格和一个\，最后是一个分号。为了使用exec选项，必须要同时使用print选项。如果验证一下find命令，会发现该命令只输出从当前路径起的相对路径及文件名。</p>
+<p>实例1：ls -l命令放在find命令的-exec选项中 </p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -type f -exec ls -l &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>输出： </p>
+<pre><code>[root@localhost test]# find . -type f -exec ls -l {} \; 
 
+-rw-r--r-- 1 root root 127 10-28 16:51 ./log2014.log
+
+-rw-r--r-- 1 root root 0 10-28 14:47 ./test4/log3-2.log
+
+-rw-r--r-- 1 root root 0 10-28 14:47 ./test4/log3-3.log
+
+-rw-r--r-- 1 root root 0 10-28 14:47 ./test4/log3-1.log
+
+-rw-r--r-- 1 root root 33 10-28 16:54 ./log2013.log
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 ./log2012.log
+
+-rw-r--r-- 1 root root 25 10-28 17:02 ./log.log
+
+-rw-r--r-- 1 root root 37 10-28 17:07 ./log.txt
+
+-rw-r--r-- 1 root root 0 10-28 14:47 ./test3/log3-2.log
+
+-rw-r--r-- 1 root root 0 10-28 14:47 ./test3/log3-3.log
+
+-rw-r--r-- 1 root root 0 10-28 14:47 ./test3/log3-1.log
+
+[root@localhost test]#
+</code></pre><p>说明： </p>
+<p>上面的例子中，find命令匹配到了当前目录下的所有普通文件，并在-exec选项中使用ls -l命令将它们列出。</p>
+<p>实例2：在目录中查找更改时间在n日以前的文件并删除它们</p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -type f -mtime +14 -exec rm &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# ll
+
+总计 328
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 log2012.log
+
+-rw-r--r-- 1 root root     33 10-28 16:54 log2013.log
+
+-rw-r--r-- 1 root root    127 10-28 16:51 log2014.log
+
+lrwxrwxrwx 1 root root      7 10-28 15:18 log_link.log -&gt; log.log
+
+-rw-r--r-- 1 root root     25 10-28 17:02 log.log
+
+-rw-r--r-- 1 root root     37 10-28 17:07 log.txt
+
+drwxr-xr-x 6 root root   4096 10-27 01:58 scf
+
+drwxrwxrwx 2 root root   4096 10-28 14:47 test3
+
+drwxrwxrwx 2 root root   4096 10-28 14:47 test4
+
+[root@localhost test]# find . -type f -mtime +14 -exec rm {} \;
+
+[root@localhost test]# ll
+
+总计 312
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 log2012.log
+
+lrwxrwxrwx 1 root root      7 10-28 15:18 log_link.log -&gt; log.log
+
+drwxr-xr-x 6 root root   4096 10-27 01:58 scf
+
+drwxrwxrwx 2 root root   4096 11-12 19:32 test3
+
+drwxrwxrwx 2 root root   4096 11-12 19:32 test4
+
+[root@localhost test]# 
+</code></pre><p>说明：</p>
+<p>在shell中用任何方式删除文件之前，应当先查看相应的文件，一定要小心！当使用诸如mv或rm命令时，可以使用-exec选项的安全模式。它将在对每个匹配到的文件进行操作之前提示你。 </p>
+<p>实例3：在目录中查找更改时间在n日以前的文件并删除它们，在删除之前先给出提示</p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;*.log&quot; -mtime +5 -ok rm &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# ll
+
+总计 312
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 log2012.log
+
+lrwxrwxrwx 1 root root      7 10-28 15:18 log_link.log -&gt; log.log
+
+drwxr-xr-x 6 root root   4096 10-27 01:58 scf
+
+drwxrwxrwx 2 root root   4096 11-12 19:32 test3
+
+drwxrwxrwx 2 root root   4096 11-12 19:32 test4
+
+[root@localhost test]# find . -name &quot;*.log&quot; -mtime +5 -ok rm {} \;
+
+&lt; rm ... ./log_link.log &gt; ? y
+
+&lt; rm ... ./log2012.log &gt; ? n
+
+[root@localhost test]# ll
+
+总计 312
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 log2012.log
+
+drwxr-xr-x 6 root root   4096 10-27 01:58 scf
+
+drwxrwxrwx 2 root root   4096 11-12 19:32 test3
+
+drwxrwxrwx 2 root root   4096 11-12 19:32 test4
+
+[root@localhost test]#
+</code></pre><p>说明：</p>
+<p>在上面的例子中， find命令在当前目录中查找所有文件名以.log结尾、更改时间在5日以上的文件，并删除它们，只不过在删除之前先给出提示。 按y键删除文件，按n键不删除。 </p>
+<p>实例4：-exec中使用grep命令</p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find /etc -name &quot;passwd*&quot; -exec grep &quot;root&quot; &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# find /etc -name &quot;passwd*&quot; -exec grep &quot;root&quot; {} \;
+
+root:x:0:0:root:/root:/bin/bash
+
+root:x:0:0:root:/root:/bin/bash
+
+[root@localhost test]#
+</code></pre><p>说明：</p>
+<p>任何形式的命令都可以在-exec选项中使用。  在上面的例子中我们使用grep命令。find命令首先匹配所有文件名为“ passwd*”的文件，例如passwd、passwd.old、passwd.bak，然后执行grep命令看看在这些文件中是否存在一个root用户。</p>
+<p>实例5：查找文件移动到指定目录  </p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;*.log&quot; -exec mv &#123;&#125; .. \;</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test]# ll
+
+总计 12drwxr-xr-x 6 root root 4096 10-27 01:58 scf
+
+drwxrwxr-x 2 root root 4096 11-12 22:49 test3
+
+drwxrwxr-x 2 root root 4096 11-12 19:32 test4
+
+[root@localhost test]# cd test3/
+
+[root@localhost test3]# ll
+
+总计 304
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 log2012.log
+
+-rw-r--r-- 1 root root     61 11-12 22:44 log2013.log
+
+-rw-r--r-- 1 root root      0 11-12 22:25 log2014.log
+
+[root@localhost test3]# find . -name &quot;*.log&quot; -exec mv {} .. \;
+
+[root@localhost test3]# ll
+
+总计 0[root@localhost test3]# cd ..
+
+[root@localhost test]# ll
+
+总计 316
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 log2012.log
+
+-rw-r--r-- 1 root root     61 11-12 22:44 log2013.log
+
+-rw-r--r-- 1 root root      0 11-12 22:25 log2014.log
+
+drwxr-xr-x 6 root root   4096 10-27 01:58 scf
+
+drwxrwxr-x 2 root root   4096 11-12 22:50 test3
+
+drwxrwxr-x 2 root root   4096 11-12 19:32 test4
+
+[root@localhost test]#
+</code></pre><p>实例6：用exec选项执行cp命令  </p>
+<p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;*.log&quot; -exec cp &#123;&#125; test3 \;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<pre><code>[root@localhost test3]# ll
+
+总计 0[root@localhost test3]# cd ..
+
+[root@localhost test]# ll
+
+总计 316
+
+-rw-r--r-- 1 root root 302108 11-03 06:19 log2012.log
+
+-rw-r--r-- 1 root root     61 11-12 22:44 log2013.log
+
+-rw-r--r-- 1 root root      0 11-12 22:25 log2014.log
+
+drwxr-xr-x 6 root root   4096 10-27 01:58 scf
+
+drwxrwxr-x 2 root root   4096 11-12 22:50 test3
+
+drwxrwxr-x 2 root root   4096 11-12 19:32 test4
+
+[root@localhost test]# find . -name &quot;*.log&quot; -exec cp {} test3 \;
+
+cp: “./test3/log2014.log” 及 “test3/log2014.log” 为同一文件
+
+cp: “./test3/log2013.log” 及 “test3/log2013.log” 为同一文件
+
+cp: “./test3/log2012.log” 及 “test3/log2012.log” 为同一文件
+
+[root@localhost test]# cd test3
+
+[root@localhost test3]# ll
+
+总计 304
+
+-rw-r--r-- 1 root root 302108 11-12 22:54 log2012.log
+
+-rw-r--r-- 1 root root     61 11-12 22:54 log2013.log
+
+-rw-r--r-- 1 root root      0 11-12 22:54 log2014.log
+
+[root@localhost test3]#
+</code></pre>
       
     </div>
 
@@ -420,16 +592,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/28/ospf面试/" rel="next" title="OSPF常见面试题">
-                <i class="fa fa-chevron-left"></i> OSPF常见面试题
+              <a href="/2016/10/01/9.30总结5/" rel="next" title="一口鸡汤（5）">
+                <i class="fa fa-chevron-left"></i> 一口鸡汤（5）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/30/9.30总结2/" rel="prev" title="一口鸡汤（2）">
-                一口鸡汤（2） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/01/9.30Z总结7/" rel="prev" title="一口鸡汤（7）">
+                一口鸡汤（7） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -456,8 +628,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/30/9.30总结/"
-           data-title="一口鸡汤（1）" data-url="http://lionspace.cn/2016/09/30/9.30总结/">
+      <div class="ds-thread" data-thread-key="2016/10/01/9.30总结6/"
+           data-title="一口鸡汤（6）" data-url="http://lionspace.cn/2016/10/01/9.30总结6/">
       </div>
     
   </div>
@@ -573,7 +745,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP工作原理"><span class="nav-number">1.</span> <span class="nav-text">ARP工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是ARP"><span class="nav-number">1.1.</span> <span class="nav-text">什么是ARP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同网段内ARP工作原理"><span class="nav-number">1.2.</span> <span class="nav-text">同网段内ARP工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段内ARP工作原理"><span class="nav-number">1.3.</span> <span class="nav-text">不同网段内ARP工作原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux命令—-find命令之exec"><span class="nav-number">1.</span> <span class="nav-text">linux命令—-find命令之exec</span></a></li></ol></div>
             
           </div>
         </section>
